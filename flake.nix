@@ -44,7 +44,7 @@
 
     in
     {
-      nixosConfigurations.kankerpad = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.KankerPad = nixpkgs.lib.nixosSystem {
         specialArgs = {
           inherit inputs;
           vars = import ./vars.nix;
