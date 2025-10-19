@@ -60,7 +60,6 @@
       packages =
         nixpkgs.lib.recursiveUpdate
           (forAllSystems (system: {
-            dumpyara = nixpkgs.legacyPackages.${system}.callPackage ./packages/dumpyara.nix { };
             mdns-scan = nixpkgs.legacyPackages.${system}.callPackage ./packages/mdns-scan.nix { };
             ttf-ms-win11 = nixpkgs.legacyPackages.${system}.callPackage ./packages/ttf-ms-win11.nix { };
             samfirm-js = nixpkgs.legacyPackages.${system}.callPackage ./packages/samfirm-js.nix { };
