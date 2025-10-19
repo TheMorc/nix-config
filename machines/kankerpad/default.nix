@@ -1,6 +1,11 @@
 # Lenovo ThinkPad L15
 
-{ inputs, pkgs, lib, ... }:
+{
+  inputs,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
   imports = [
