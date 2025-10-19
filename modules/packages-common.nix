@@ -1,10 +1,20 @@
-{ config, pkgs, inputs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 
 let
   selfPkgs = inputs.self.packages.${pkgs.system};
 in
 {
   programs = {
+    nix-ld.enable = true;
+    nix-ld.libraries = with pkgs; [
+
+    ];
+
     steam.enable = true;
     git.enable = true;
     htop.enable = true;
@@ -19,8 +29,17 @@ in
     };
   };
 
+  services.tailscale.enable = true;
+  services.sunshine = {
+    enable = true;
+    autoStart = true;
+    capSysAdmin = true;
+    openFirewall = true;
+  };
+
   environment.systemPackages = with pkgs; [
     android-tools
+    appimage-run
     autoconf
     automake
     bind
@@ -54,6 +73,7 @@ in
     python3
     ripgrep
     rsync
+    sshpass
     sops
     sturmflut
     tailscale

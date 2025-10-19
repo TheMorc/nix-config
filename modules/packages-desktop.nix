@@ -1,4 +1,10 @@
-{ inputs, lib, pkgs, ... }:
+{
+  inputs,
+  lib,
+  pkgs,
+  frostix,
+  ...
+}:
 
 let
   selfPkgs = inputs.self.packages.${pkgs.system};
@@ -9,6 +15,12 @@ in
     edl
     heimdall.udev
   ];
+
+  services.usbmuxd.enable = true;
+  services.tftpd.enable = true;
+  services.tftpd.path = "/tftproot";
+  services.flatpak.enable = true;
+  networking.firewall.enable = false;
 
   programs = {
     thunderbird.enable = true;
@@ -29,6 +41,7 @@ in
   };
 
   environment.systemPackages = with pkgs; [
+    alvr
     bambu-studio
     bitwarden-desktop
     davinci-resolve
@@ -41,20 +54,25 @@ in
     hunspellDicts.pl_PL
     hyphenDicts.de_DE
     hyphenDicts.en_US
+    ifuse
     itgmania
     kdePackages.sddm-kcm
+    libimobiledevice
     libmikmod
     libreoffice-qt6-fresh
     lutris
     mikmod
     milkytracker
+    frostix.mtkclient-git
     obs-studio
     pmbootstrap
     prismlauncher
     remmina
     signal-desktop
     transmission-qt
+    tree
     vlc
+    vscode
     yt-dlp
 
     selfPkgs.dumpyara

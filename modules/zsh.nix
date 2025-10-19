@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 let
   ffmpeg = lib.getExe pkgs.ffmpeg;
@@ -34,56 +39,56 @@ in
     };
 
     interactiveShellInit = ''
-      zstyle ':completion:*' menu select
+            zstyle ':completion:*' menu select
 
-      autoload -Uz edit-command-line \
-          bracketed-paste-magic \
-          down-line-or-beginning-search \
-          history-search-end \
-          select-word-style \
-          up-line-or-beginning-search \
-          url-quote-magic
+            autoload -Uz edit-command-line \
+                bracketed-paste-magic \
+                down-line-or-beginning-search \
+                history-search-end \
+                select-word-style \
+                up-line-or-beginning-search \
+                url-quote-magic
 
-      zle -N bracketed-paste bracketed-paste-magic
-      zle -N down-line-or-beginning-search
-      zle -N edit-command-line
-      zle -N self-insert url-quote-magic
-      zle -N up-line-or-beginning-search
+            zle -N bracketed-paste bracketed-paste-magic
+            zle -N down-line-or-beginning-search
+            zle -N edit-command-line
+            zle -N self-insert url-quote-magic
+            zle -N up-line-or-beginning-search
 
-      bindkey -e
-      bindkey "^H" backward-kill-word
-      bindkey "^[[1;5D" backward-word
-      bindkey "^[[H" beginning-of-line
-      bindkey "^[[3~" delete-char
-      bindkey "^[[B" down-line-or-beginning-search
-      bindkey "^X^E" edit-command-line
-      bindkey "^[[F" end-of-line
-      bindkey "^[[1;5C" forward-word
-      bindkey "^[[A" up-line-or-beginning-search
+            bindkey -e
+            bindkey "^H" backward-kill-word
+            bindkey "^[[1;5D" backward-word
+            bindkey "^[[H" beginning-of-line
+            bindkey "^[[3~" delete-char
+            bindkey "^[[B" down-line-or-beginning-search
+            bindkey "^X^E" edit-command-line
+            bindkey "^[[F" end-of-line
+            bindkey "^[[1;5C" forward-word
+            bindkey "^[[A" up-line-or-beginning-search
 
-      mkdir -p $HOME/.cache/zsh
+            mkdir -p $HOME/.cache/zsh
 
-      export WORDCHARS="''${WORDCHARS//\/}"
+            export WORDCHARS="''${WORDCHARS//\/}"
 
-      heimdall-wait-for-device () {
-	echo "< waiting for any device >"
-	while ! ${heimdall} detect > /dev/null 2>&1; do
-	    sleep 1
-	done
-      }
-      libneeds () {${readelf} -d $1 |grep '\(NEEDED\)' | sed -r 's/.*\[(.*)\]/\1/'}
-      precmd () {
-          gitinfo=$(${git} branch --show-current 2> /dev/null)
-          [[ -z $gitinfo ]] && return
-          [[ -z $(${git} status --porcelain 2> /dev/null) ]] && gitinfo="%F{green} ($gitinfo)%f" ||
-          gitinfo="%F{yellow} ($gitinfo %B●%b)%f"
-      }
-      search () {[ -z "$2" ] && find . -iname "*$1*" | cut -c3- || find $2 -iname "*$1*"}
-      stfu () {
-          $@>/dev/null 2>&1 &!
-      }
-      ucd () {for i in $(seq 1 $1); do cd ..; done}
-      wherebin () {readlink $(which $1)}
+            heimdall-wait-for-device () {
+      	echo "< waiting for any device >"
+      	while ! ${heimdall} detect > /dev/null 2>&1; do
+      	    sleep 1
+      	done
+            }
+            libneeds () {${readelf} -d $1 |grep '\(NEEDED\)' | sed -r 's/.*\[(.*)\]/\1/'}
+            precmd () {
+                gitinfo=$(${git} branch --show-current 2> /dev/null)
+                [[ -z $gitinfo ]] && return
+                [[ -z $(${git} status --porcelain 2> /dev/null) ]] && gitinfo="%F{green} ($gitinfo)%f" ||
+                gitinfo="%F{yellow} ($gitinfo %B●%b)%f"
+            }
+            search () {[ -z "$2" ] && find . -iname "*$1*" | cut -c3- || find $2 -iname "*$1*"}
+            stfu () {
+                $@>/dev/null 2>&1 &!
+            }
+            ucd () {for i in $(seq 1 $1); do cd ..; done}
+            wherebin () {readlink $(which $1)}
     '';
 
     promptInit = ''

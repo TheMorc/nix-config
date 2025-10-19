@@ -1,12 +1,52 @@
 {
   "nodes": {
+    "frostix": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1760839283,
+        "narHash": "sha256-Lt7/L6BfwZoU2hGfXpoRYq78UZcHLfj5EXL4D4PVpCw=",
+        "owner": "shomykohai",
+        "repo": "frostix",
+        "rev": "b0aae7b4e99d8fd48031d016fac79f6f63ae7815",
+        "type": "github"
+      },
+      "original": {
+        "owner": "shomykohai",
+        "repo": "frostix",
+        "type": "github"
+      }
+    },
+    "funnyprint": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1760804691,
+        "narHash": "sha256-wxGOvBP7yyFSE8yiUHMCMzYbCpiLjfKB/mjPa9CcQKQ=",
+        "owner": "ValdikSS",
+        "repo": "printer-driver-funnyprint",
+        "rev": "cc61609c75d903366820fc13384818b55bc87677",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ValdikSS",
+        "repo": "printer-driver-funnyprint",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1749794982,
-        "narHash": "sha256-Kh9K4taXbVuaLC0IL+9HcfvxsSUx8dPB5s5weJcc9pc=",
+        "lastModified": 1760524057,
+        "narHash": "sha256-EVAqOteLBFmd7pKkb0+FIUyzTF61VKi7YmvP1tw4nEw=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "ee930f9755f58096ac6e8ca94a1887e0534e2d81",
+        "rev": "544961dfcce86422ba200ed9a0b00dd4b1486ec5",
         "type": "github"
       },
       "original": {
@@ -18,7 +58,30 @@
     },
     "root": {
       "inputs": {
-        "nixpkgs": "nixpkgs"
+        "frostix": "frostix",
+        "funnyprint": "funnyprint",
+        "nixpkgs": "nixpkgs",
+        "treefmt-nix": "treefmt-nix"
+      }
+    },
+    "treefmt-nix": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1760802554,
+        "narHash": "sha256-5YkOYOCF8/XNw89/ABKFB0c/P78U2EVuKRDGTql6+kA=",
+        "owner": "numtide",
+        "repo": "treefmt-nix",
+        "rev": "296ebf0c3668ebceb3b0bfee55298f112b4b5754",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "treefmt-nix",
+        "type": "github"
       }
     }
   },
