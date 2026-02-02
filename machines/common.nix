@@ -53,10 +53,13 @@
   };
 
   nix = {
-    settings.experimental-features = [
-      "nix-command"
-      "flakes"
-    ];
+    settings = {
+      trusted-users = [ "@wheel" ];
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
+    };
     gc.automatic = true;
     gc.dates = "weekly";
     gc.options = "--delete-older-than 7d";
