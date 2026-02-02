@@ -1,4 +1,9 @@
-{ lib, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 
 {
   imports = [
@@ -26,6 +31,7 @@
     XDG_DATA_HOME = "$HOME/.local/share";
     XDG_STATE_HOME = "$HOME/.local/state";
     PATH = [ "$HOME/.local/bin" ];
+    LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib";
   };
 
   time.timeZone = "Europe/Berlin";
