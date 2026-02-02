@@ -11,7 +11,6 @@ let
 in
 {
   services.udev.packages = with pkgs; [
-    android-udev-rules
     edl
     heimdall.udev
   ];
@@ -44,7 +43,6 @@ in
     alvr
     bambu-studio
     bitwarden-desktop
-    davinci-resolve
     discord-ptb
     edl
     gimp3-with-plugins
@@ -69,7 +67,7 @@ in
     prismlauncher
     remmina
     signal-desktop
-    transmission-qt
+    transmission_4-qt
     tree
     vlc
     vscode
