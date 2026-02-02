@@ -15,6 +15,8 @@
       description = "Leandro Friedrich";
       extraGroups = [
         "wheel"
+        "dialout"
+        "tty"
       ]
       ++ lib.optionals config.networking.networkmanager.enable [ "networkmanager" ]
       ++ lib.optionals config.programs.wireshark.enable [ "wireshark" ]
