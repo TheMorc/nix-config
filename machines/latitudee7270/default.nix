@@ -1,4 +1,4 @@
-# Lenovo ThinkPad L15
+# Dell Latitude E7270
 
 {
   inputs,
@@ -13,7 +13,7 @@
     ../desktop.nix
   ];
 
-  networking.hostName = "KankerPad";
+  networking.hostName = "LatitudeE7270";
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.loader.efi.canTouchEfiVariables = true;
