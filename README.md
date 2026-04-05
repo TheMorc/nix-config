@@ -1,21 +1,18 @@
-# David's NixOS configs (LEANDRO EDITION)
+# David's Leo's Morc's NixOS configs
 Configuration files for my NixOS machines.
 
-## Desktop
-Devices: KankerPad
+## TEST TEST TEST TEST
+TEST COPNUTER
 
 ### Installation:
-1. Install NixOS and enable flakes
-2. Setup age key:
+1. Install NixOS, duhh...
+2. Deploy:
     ```
-    mkdir -p /var/lib/sops-nix
-    sudo nix-shell -p nano --run "nano /var/lib/sops-nix/key.txt"
-    chmod 400 /var/lib/sops-nix/key.txt
-    ```
-3. Deploy:
-    ```
-    nix-shell -p git --run "git clone https://github.com/leandrofriedrich/nix-config.git"
+    nix-shell -p git --run "git clone https://github.com/themorc/nix-config.git"
     cd nix-config
-    sudo nixos-rebuild boot --flake "path:.#<HOSTNAME>"
+    sudo nixos-rebuild boot --flake "path:.#KankerPad"
+	```
+3. Reboot:
+	```
     sudo reboot
     ```
