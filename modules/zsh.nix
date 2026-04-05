@@ -8,7 +8,6 @@
 let
   ffmpeg = lib.getExe pkgs.ffmpeg;
   git = lib.getExe pkgs.git;
-  heimdall = lib.getExe pkgs.heimdall;
   readelf = lib.getExe' pkgs.binutils "readelf";
   yt-dlp = lib.getExe pkgs.yt-dlp;
 in
@@ -33,9 +32,7 @@ in
     shellAliases = {
       compress-vid = "${ffmpeg} -vcodec libx264 -crf 28 output.mp4 -i";
       rp = "realpath";
-      heimdall = "heimdall-wait-for-device && ${heimdall}";
       switch-nixos = "sudo nixos-rebuild switch --flake path:.#${config.networking.hostName}";
-      yt-dlp-mp4 = "${yt-dlp} -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best'";
     };
 
     interactiveShellInit = ''
@@ -70,12 +67,6 @@ in
 
             export WORDCHARS="''${WORDCHARS//\/}"
 
-            heimdall-wait-for-device () {
-      	echo "< waiting for any device >"
-      	while ! ${heimdall} detect > /dev/null 2>&1; do
-      	    sleep 1
-      	done
-            }
             libneeds () {${readelf} -d $1 |grep '\(NEEDED\)' | sed -r 's/.*\[(.*)\]/\1/'}
             precmd () {
                 gitinfo=$(${git} branch --show-current 2> /dev/null)

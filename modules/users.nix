@@ -10,9 +10,9 @@
 {
   users = {
     mutableUsers = false;
-    users.leandro = {
+    users.richardgracik = {
       isNormalUser = true;
-      description = "Leandro Friedrich";
+      description = "Richard Gráčik";
       extraGroups = [
         "wheel"
         "dialout"

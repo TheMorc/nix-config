@@ -15,27 +15,14 @@ in
 
     ];
 
-    steam.enable = true;
     git.enable = true;
     htop.enable = true;
-    neovim = {
-      enable = true;
-      defaultEditor = true;
-      viAlias = true;
-      vimAlias = true;
-    };
     ssh = {
       startAgent = true;
     };
   };
 
   services.tailscale.enable = true;
-  services.sunshine = {
-    enable = true;
-    autoStart = true;
-    capSysAdmin = true;
-    openFirewall = true;
-  };
 
   environment.systemPackages = with pkgs; [
     android-tools
@@ -49,10 +36,8 @@ in
     curl
     dig
     dnsmasq
-    droidcam
     dtc
     fastfetch
-    ffmpeg
     ffmpeg
     file
     gcc
@@ -86,7 +71,5 @@ in
     zip
     zlib
 
-    selfPkgs.mdns-scan
-    selfPkgs.samfirm-js
   ];
 }
