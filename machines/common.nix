@@ -34,9 +34,14 @@
     LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib";
   };
 
-  time.timeZone = "Europe/Berlin";
-  console.keyMap = "de";
-  services.xserver.xkb.layout = "de";
+  time.timeZone = "Europe/Bratislava";
+  console.keyMap = "sk-qwerty";
+
+  services.xserver.xkb = {
+    layout = "sk";
+    variant = "qwerty";
+  };
+|
   i18n = {
     defaultLocale = "en_US.UTF-8";
     extraLocaleSettings = lib.genAttrs [
@@ -49,7 +54,7 @@
       "LC_PAPER"
       "LC_TELEPHONE"
       "LC_TIME"
-    ] (var: "de_DE.UTF-8");
+    ] (var: "sk_SK.UTF-8");
   };
 
   nix = {
@@ -65,5 +70,5 @@
     gc.options = "-d";
   };
   nixpkgs.config.allowUnfree = true;
-  system.stateVersion = "25.05";
+  system.stateVersion = "26.05";
 }
