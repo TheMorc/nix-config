@@ -20,26 +20,6 @@
         "type": "github"
       }
     },
-    "funnyprint": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1760804691,
-        "narHash": "sha256-wxGOvBP7yyFSE8yiUHMCMzYbCpiLjfKB/mjPa9CcQKQ=",
-        "owner": "ValdikSS",
-        "repo": "printer-driver-funnyprint",
-        "rev": "cc61609c75d903366820fc13384818b55bc87677",
-        "type": "github"
-      },
-      "original": {
-        "owner": "ValdikSS",
-        "repo": "printer-driver-funnyprint",
-        "type": "github"
-      }
-    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1769461804,
@@ -59,7 +39,6 @@
     "root": {
       "inputs": {
         "frostix": "frostix",
-        "funnyprint": "funnyprint",
         "nixpkgs": "nixpkgs",
         "treefmt-nix": "treefmt-nix"
       }

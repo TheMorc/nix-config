@@ -1,14 +1,10 @@
 {
-  description = "David's NixOS configs (LEANDRO EDITION)";
+  description = "David's Leo's Morc's NixOS configs";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     frostix = {
       url = "github:shomykohai/frostix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    funnyprint = {
-      url = "github:ValdikSS/printer-driver-funnyprint";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     treefmt-nix = {
@@ -44,7 +40,7 @@
 
     in
     {
-      nixosConfigurations.KankerPad = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.LatitudeE7270 = nixpkgs.lib.nixosSystem {
         specialArgs = {
           inherit inputs;
           vars = import ./vars.nix;
@@ -52,23 +48,17 @@
         };
         system = "x86_64-linux";
         modules = [
-          ./machines/kankerpad
-          inputs.funnyprint.nixosModules.funnyprint
+          ./machines/latitudee7270
         ];
       };
 
       packages =
         nixpkgs.lib.recursiveUpdate
           (forAllSystems (system: {
-            mdns-scan = nixpkgs.legacyPackages.${system}.callPackage ./packages/mdns-scan.nix { };
-            ttf-ms-win11 = nixpkgs.legacyPackages.${system}.callPackage ./packages/ttf-ms-win11.nix { };
-            samfirm-js = nixpkgs.legacyPackages.${system}.callPackage ./packages/samfirm-js.nix { };
           }))
           {
             x86_64-linux = {
               #ida-pro = nixpkgs.legacyPackages.x86_64-linux.callPackage ./packages/ida-pro.nix { };
-              odin4 = nixpkgs.legacyPackages.x86_64-linux.callPackage ./packages/odin4.nix { };
-              outfox-alpha5 = nixpkgs.legacyPackages.x86_64-linux.callPackage ./packages/outfox-alpha5.nix { };
             };
           };
       formatter = forAllSystems (system: treefmtEval.${system}.config.build.wrapper);
