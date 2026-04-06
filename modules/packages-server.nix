@@ -34,6 +34,7 @@ in
     tree
     mpv
     yt-dlp
+    kdePackages.kate
 
   ];
 }
