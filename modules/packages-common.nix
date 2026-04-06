@@ -42,6 +42,7 @@ in
     file
     gcc
     gdb
+    gh
     gnumake
     inetutils
     internetarchive
