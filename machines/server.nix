@@ -74,6 +74,7 @@
       yt-dlp
       kdePackages.kate
       kdePackages.konsole
+      chromium
   ];
 
     sessionVariables = {
@@ -85,19 +86,6 @@
       LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib";
     };
 
-  };
-
-  programs = {
-    nix-ld.enable = true;
-    nix-ld.libraries = with pkgs; [
-
-    ];
-
-    git.enable = true;
-    htop.enable = true;
-    ssh = {
-      startAgent = true;
-    };
   };
 
   boot = {
@@ -177,6 +165,20 @@
   networking.firewall.enable = false;
 
   programs = {
+    nix-ld.enable = true;
+      nix-ld.libraries = with pkgs; [
+
+      ];
+
+    git.enable = true;
+    htop.enable = true;
+
+    ssh = {
+      startAgent = true;
+    };
+
+    chromium.enable = true;
+
     firefox = {
       enable = true;
       preferences = {
