@@ -19,6 +19,8 @@
   programs.fuse.userAllowOther = true;
   security.rtkit.enable = true;
 
+  #home.file.".ssh/id_ed25519.pub".source = ../dot/id_ed25519.pub;
+
   services.openssh = {
     enable = true;
     settings.PasswordAuthentication = false;
