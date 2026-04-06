@@ -3,6 +3,7 @@
 {
   imports = [
     ./common.nix
+    ../modules/packages-server.nix
   ];
 
   services = {
