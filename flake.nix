@@ -52,6 +52,18 @@
         ];
       };
 
+      nixosConfigurations.mini = nixpkgs.lib.nixosSystem {
+        specialArgs = {
+          inherit inputs;
+          vars = import ./vars.nix;
+          frostix = inputs.frostix.packages.x86_64-linux;
+        };
+        system = "x86_64-linux";
+        modules = [
+          ./machines/mini
+        ];
+      };
+
       packages =
         nixpkgs.lib.recursiveUpdate
           (forAllSystems (system: {
