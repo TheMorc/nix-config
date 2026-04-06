@@ -11,6 +11,7 @@
   imports = [
     ./hardware-configuration.nix
     ../server.nix
+    ./services
   ];
 
   networking.hostName = "mini";
