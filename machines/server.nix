@@ -80,6 +80,12 @@
       classicube
     ];
 
+    lxqt.excludePackages = with pkgs; [
+      lxqt.qterminal
+      lxqt.qlipper
+      xscreensaver
+    ];
+
     sessionVariables = {
       XDG_CACHE_HOME = "$HOME/.cache";
       XDG_CONFIG_HOME = "$HOME/.config";
@@ -123,7 +129,6 @@
     xserver.displayManager.lightdm.enable = true;
     displayManager.autoLogin.user = "mini";
     displayManager.autoLogin.enable = true;
-    xscreensaver.enable = false;
     printing.enable = true;
     pulseaudio.enable = false;
     pipewire = {
@@ -177,7 +182,6 @@
     };
 
     chromium.enable = true;
-    xscreensaver.enable = false;
 
     firefox = {
       enable = true;
