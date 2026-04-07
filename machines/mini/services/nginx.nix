@@ -284,4 +284,44 @@
     };
   };
 
+  services.nginx.virtualHosts."vaultwarden" = {
+    enableACME = false;
+    forceSSL = true;
+
+    http2 = true;
+
+    listen = [
+      {
+        addr = "0.0.0.0";
+        port = 374;
+        ssl = true;
+      }
+      {
+        addr = "[::]";
+        port = 374;
+        ssl = true;
+      }
+    ];
+
+    sslCertificate = "/var/lib/acme/biskupova.televiziastb.sk/fullchain.pem";
+    sslCertificateKey = "/var/lib/acme/biskupova.televiziastb.sk/key.pem";
+
+    extraConfig = ''
+      client_max_body_size 50000M;
+      access_log off;
+    '';
+
+    locations."/" = {
+      proxyPass = "http://localhost:8222";
+      proxyWebsockets = true;
+
+      extraConfig = ''
+        proxy_set_header Host              $host;
+        proxy_set_header X-Real-IP         $remote_addr;
+        proxy_set_header X-Forwarded-For   $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+      '';
+    };
+  };
+
 }
