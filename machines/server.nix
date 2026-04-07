@@ -120,6 +120,8 @@
     xserver.enable = true;
     xserver.desktopManager.lxqt.enable = true;
     xserver.displayManager.lightdm.enable = true;
+    displayManager.autoLogin.user = "mini";
+    displayManager.autoLogin.enable = true;
     xscreensaver.enable = false;
     printing.enable = true;
     pulseaudio.enable = false;
