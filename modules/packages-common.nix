@@ -10,10 +10,6 @@ let
 in
 {
   programs = {
-    nix-ld.enable = true;
-    nix-ld.libraries = with pkgs; [
-
-    ];
 
     git.enable = true;
     htop.enable = true;
