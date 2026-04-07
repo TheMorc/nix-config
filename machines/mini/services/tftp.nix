@@ -1,0 +1,12 @@
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+{
+  services.tftpd = {
+    enable = true;
+    path = "/srv/tftp";
+  };
+}
