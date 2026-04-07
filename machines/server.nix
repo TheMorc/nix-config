@@ -122,7 +122,10 @@
       enable = true;
       settings.PasswordAuthentication = false;
       settings.KbdInteractiveAuthentication = false;
-      ports = [ 22 24 ];
+      ports = [
+        22
+        24
+      ];
     };
 
     xserver.enable = true;
