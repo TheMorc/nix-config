@@ -182,6 +182,7 @@
     };
 
     chromium.enable = true;
+    xscreensaver.enable = false;
 
     firefox = {
       enable = true;
