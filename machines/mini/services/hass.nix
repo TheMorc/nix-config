@@ -26,4 +26,10 @@
     extraPackages = ps: with ps; [ psycopg2 ];
     config.recorder.db_url = "postgresql://@/hass";
   };
+
+  services.home-assistant.config.http = {
+    server_host = "::1";
+    trusted_proxies = [ "::1" ];
+    use_x_forwarded_for = true;
+  };
 }
