@@ -77,6 +77,7 @@
       chromium
       conky
       netsurf-browser
+      classicube
     ];
 
     sessionVariables = {
