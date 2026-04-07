@@ -75,6 +75,8 @@
       kdePackages.kate
       kdePackages.konsole
       chromium
+      conky
+      netsurf-browser
   ];
 
     sessionVariables = {
