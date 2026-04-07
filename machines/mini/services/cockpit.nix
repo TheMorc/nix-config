@@ -12,7 +12,7 @@
   services.cockpit = {
     enable = true;
     allowed-origins = [
-      "https://*:9090"
+      "http://*:9090"
       "https://*:373"
     ];
     settings = {
