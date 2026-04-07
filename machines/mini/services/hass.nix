@@ -21,7 +21,7 @@
     config = {
       # Includes dependencies for a basic setup
       # https://www.home-assistant.io/integrations/default_config/
-      default_config = {};
+      default_config = { };
     };
     extraPackages = ps: with ps; [ psycopg2 ];
     config.recorder.db_url = "postgresql://@/hass";

@@ -6,7 +6,7 @@
 }:
 
 {
-   imports = [
+  imports = [
     ../modules/users.nix
     ../modules/virtualization.nix
     ../modules/zsh.nix
@@ -77,7 +77,7 @@
       chromium
       conky
       netsurf-browser
-  ];
+    ];
 
     sessionVariables = {
       XDG_CACHE_HOME = "$HOME/.cache";
@@ -165,14 +165,13 @@
     gc.options = "-d";
   };
 
-
   networking.firewall.enable = false;
 
   programs = {
     nix-ld.enable = true;
-      nix-ld.libraries = with pkgs; [
+    nix-ld.libraries = with pkgs; [
 
-      ];
+    ];
 
     git.enable = true;
     htop.enable = true;

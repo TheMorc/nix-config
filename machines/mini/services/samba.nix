@@ -35,7 +35,6 @@
         "fruit:encoding" = "native";
         "spotlight backend" = "tracker";
 
-
         "readdir_attr:aapl_rsize" = "no";
         "readdir_attr:aapl_finder_info" = "no";
         "readdir_attr:aapl_max_access" = "no";

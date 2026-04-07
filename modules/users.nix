@@ -46,5 +46,4 @@
     // lib.optionalAttrs config.programs.zsh.enable { shell = pkgs.zsh; };
   };
 
-
 }
