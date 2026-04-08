@@ -116,16 +116,6 @@
       variant = "qwerty";
     };
 
-    openssh = {
-      enable = true;
-      settings.PasswordAuthentication = false;
-      settings.KbdInteractiveAuthentication = false;
-      ports = [
-        22
-        24
-      ];
-    };
-
     xserver.enable = true;
     xserver.desktopManager.lxqt.enable = true;
     xserver.displayManager.lightdm.enable = true;
@@ -177,9 +167,6 @@
     git.enable = true;
     htop.enable = true;
 
-    ssh = {
-      startAgent = true;
-    };
 
     chromium.enable = true;
 
