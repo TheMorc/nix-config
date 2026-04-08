@@ -121,7 +121,6 @@
     xserver.displayManager.lightdm.enable = true;
     displayManager.autoLogin.user = "mini";
     displayManager.autoLogin.enable = true;
-    printing.enable = true;
   };
 
   time.timeZone = "Europe/Bratislava";
@@ -159,6 +158,7 @@
     git.enable = true;
     htop.enable = true;
 
+    fuse.userAllowOther = true;
 
     chromium.enable = true;
 
@@ -172,8 +172,8 @@
 
   networking = {
     firewall.enable = false;
-    networking.networkmanager.enable = true;
-    networking.firewall.checkReversePath = false;
+    networkmanager.enable = true;
+    firewall.checkReversePath = false;
   };
 
 }
