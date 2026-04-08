@@ -70,6 +70,7 @@
       v4l-utils
       zip
       zlib
+      wget
 
       milkytracker
       obs-studio
