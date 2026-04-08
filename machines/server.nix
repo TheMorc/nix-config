@@ -103,13 +103,11 @@
     supportedFilesystems = [ "fuse" ];
   };
 
-  programs.fuse.userAllowOther = true;
   security.rtkit.enable = true;
 
   #home.file.".ssh/id_ed25519.pub".source = ../dot/id_ed25519.pub;
 
   services = {
-    tailscale.enable = true;
     usbmuxd.enable = true;
     flatpak.enable = true;
 
@@ -175,8 +173,6 @@
     gc.options = "-d";
   };
 
-  networking.firewall.enable = false;
-
   programs = {
     git.enable = true;
     htop.enable = true;
@@ -193,16 +189,12 @@
         "widget.use-xdg-desktop-portal.file-picker" = 1;
       };
     };
-
-    ssh = {
-      enableAskPassword = true;
-      askPassword = lib.getExe pkgs.kdePackages.ksshaskpass;
-    };
-
   };
 
-  networking.networkmanager.enable = true;
+  networking = {
+    firewall.enable = false;
+    networking.networkmanager.enable = true;
+    networking.firewall.checkReversePath = false;
+  };
 
-  # Required for WireGuard
-  networking.firewall.checkReversePath = false;
 }
