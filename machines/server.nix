@@ -2,6 +2,8 @@
   lib,
   config,
   pkgs,
+  inputs,
+  stdenv,
   ...
 }:
 
@@ -14,6 +16,8 @@
 
   nixpkgs.config.allowUnfree = true;
   system.stateVersion = "26.05";
+
+  hardware.firmware = [ inputs.dvbsky-firmware.packages.${pkgs.stdenv.hostPlatform.system}.default];
 
   environment = {
 
