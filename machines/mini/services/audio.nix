@@ -5,6 +5,7 @@
   ...
 }:
 {
+  services = {
   pulseaudio.enable = false;
   pipewire = {
     enable = true;
@@ -12,4 +13,5 @@
     alsa.support32Bit = true;
     pulse.enable = true;
   };
+};
 }
