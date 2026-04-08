@@ -1,5 +1,10 @@
 # kudos to ungeskriptet
-{ config, pkgs, inputs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 {
   imports = [ ../../../packages/tvh.nix ];
   services.tvheadend2 = {
