@@ -12,6 +12,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     tvh.url = "github:oneingan/nixpkgs/tvheadend-revive";
+
+    dvbsky-firmware = {
+      url = "github:TheMorc/nix-dvbsky-firmware";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =

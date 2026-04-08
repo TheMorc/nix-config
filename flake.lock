@@ -1,5 +1,25 @@
 {
   "nodes": {
+    "dvbsky-firmware": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1775677240,
+        "narHash": "sha256-QNRw23sETPvQmeIcA3/5W16Y5B/Ln7z4pjQFzVrBIsM=",
+        "owner": "TheMorc",
+        "repo": "nix-dvbsky-firmware",
+        "rev": "7e5b5e183bc992e9c51cf2cdb9dab45a117f1fc6",
+        "type": "github"
+      },
+      "original": {
+        "owner": "TheMorc",
+        "repo": "nix-dvbsky-firmware",
+        "type": "github"
+      }
+    },
     "frostix": {
       "inputs": {
         "nixpkgs": [
@@ -38,6 +58,7 @@
     },
     "root": {
       "inputs": {
+        "dvbsky-firmware": "dvbsky-firmware",
         "frostix": "frostix",
         "nixpkgs": "nixpkgs",
         "treefmt-nix": "treefmt-nix",
