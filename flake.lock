@@ -40,7 +40,8 @@
       "inputs": {
         "frostix": "frostix",
         "nixpkgs": "nixpkgs",
-        "treefmt-nix": "treefmt-nix"
+        "treefmt-nix": "treefmt-nix",
+        "tvh": "tvh"
       }
     },
     "treefmt-nix": {
@@ -60,6 +61,22 @@
       "original": {
         "owner": "numtide",
         "repo": "treefmt-nix",
+        "type": "github"
+      }
+    },
+    "tvh": {
+      "locked": {
+        "lastModified": 1772442606,
+        "narHash": "sha256-3IYiVJpfZUi3oVUzObUbVl3J7QK0U0hMw/BXExgMqrw=",
+        "owner": "oneingan",
+        "repo": "nixpkgs",
+        "rev": "b61889fd0808f1cc3dab6111f06daaab42552cdf",
+        "type": "github"
+      },
+      "original": {
+        "owner": "oneingan",
+        "ref": "tvheadend-revive",
+        "repo": "nixpkgs",
         "type": "github"
       }
     }

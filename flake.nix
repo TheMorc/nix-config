@@ -11,6 +11,7 @@
       url = "github:numtide/treefmt-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    tvh.url = "github:oneingan/nixpkgs/tvheadend-revive";
   };
 
   outputs =
