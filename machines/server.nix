@@ -212,4 +212,6 @@
     firewall.checkReversePath = false;
   };
 
+  systemd.services.NetworkManager-wait-online.enable = true;
+
 }
