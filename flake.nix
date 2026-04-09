@@ -11,6 +11,12 @@
       url = "github:numtide/treefmt-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     tvh.url = "github:oneingan/nixpkgs/tvheadend-revive";
 
     dvbsky-firmware = {

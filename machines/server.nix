@@ -12,7 +12,15 @@
   imports = [
     ../modules/virtualization.nix
     ../modules/zsh.nix
+    inputs.home-manager.nixosModules.home-manager
   ];
+
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    extraSpecialArgs = { inherit inputs; };
+    users.mini = ../home/mini.nix;
+  };
 
   nixpkgs.config.allowUnfree = true;
   system.stateVersion = "26.05";
@@ -130,8 +138,6 @@
     }
     // lib.optionalAttrs config.programs.zsh.enable { shell = pkgs.zsh; };
   };
-
-  #home.file.".ssh/id_ed25519.pub".source = ../dot/id_ed25519.pub;
 
   services = {
     usbmuxd.enable = true;
