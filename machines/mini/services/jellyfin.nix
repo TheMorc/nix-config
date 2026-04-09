@@ -5,7 +5,12 @@
   ...
 }:
 {
-  services.jellyfin.enable = true;
+  services.jellyfin = {
+    enable = true;
+    dataDir = "/mini_local/jellyfin/";
+    user = "mini";
+    group = "users";
+  };
 
   environment.systemPackages = [
     pkgs.jellyfin

@@ -49,6 +49,8 @@
       "176.101.178.133"
     ];
 
+    root = "/mini_local/www";
+
     extraConfig = ''
           listen       370;
           listen       [::]:370;
@@ -61,7 +63,7 @@
       		ssi on;
       		internal;
       		auth_basic off;
-      		root /var/www/html;
+      		root /mini_local/www;
       	}
 
       	location ~* \.(png|jpg|jpeg|gif)$ {
@@ -99,11 +101,14 @@
               gzip off;
           }
 
-          location ~ \.php$ {
+          location ~ \.(php|html)$ {
+            include ${config.services.nginx.package}/conf/fastcgi_params;
 
             fastcgi_pass  unix:${config.services.phpfpm.pools.www.socket};
             fastcgi_index index.php;
             fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+
+            include ${pkgs.nginx}/conf/fastcgi.conf;
 
             fastcgi_read_timeout 300;
           }
@@ -116,7 +121,7 @@
     server {
         listen       443 ssl;
         listen       [::]:443 ssl;
-        root         /var/www/html/;
+        root         /mini_local/www;
 
         ssl_certificate "/var/lib/acme/biskupova.televiziastb.sk/fullchain.pem";
         ssl_certificate_key "/var/lib/acme/biskupova.televiziastb.sk/key.pem";
@@ -137,7 +142,7 @@
             ssi on;
             internal;
             auth_basic off;
-            root /var/www/html;
+            root /mini_local/www;
         }
 
         location ~* \.(png|jpg|jpeg|gif)$ {
@@ -149,7 +154,8 @@
             add_header Cache-Control "public, no-transform";
         }
 
-        location ~ \.php$ {
+        location ~ \.(php|html)$ {
+
 
           fastcgi_pass  unix:${config.services.phpfpm.pools.www.socket};
           fastcgi_index index.php;

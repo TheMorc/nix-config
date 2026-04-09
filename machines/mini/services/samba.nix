@@ -55,6 +55,26 @@
         "force user" = "mini";
         "force group" = "users";
       };
+      "mini_local" = {
+        "path" = "/mini_local";
+        "browseable" = "yes";
+        "read only" = "no";
+        "guest ok" = "yes";
+        "create mask" = "0644";
+        "directory mask" = "0755";
+        "force user" = "mini";
+        "force group" = "users";
+      };
+      "webserver" = {
+        "path" = "/mini_local/www";
+        "browseable" = "yes";
+        "read only" = "no";
+        "guest ok" = "yes";
+        "create mask" = "0644";
+        "directory mask" = "0755";
+        "force user" = "mini";
+        "force group" = "users";
+      };
     };
   };
 

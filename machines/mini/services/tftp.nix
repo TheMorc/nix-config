@@ -7,6 +7,6 @@
 {
   services.tftpd = {
     enable = true;
-    path = "/srv/tftp";
+    path = "/mini_local/tftp";
   };
 }

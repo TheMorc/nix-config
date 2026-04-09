@@ -7,6 +7,7 @@
 {
   services.home-assistant = {
     enable = true;
+    configDir = "/mini_local/homeassistant/";
     extraComponents = [
       # Components required to complete the onboarding
       "analytics"
