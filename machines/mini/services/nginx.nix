@@ -46,7 +46,7 @@
     serverAliases = [
       "biskupova.370.network"
       "biskupova.funfeuro.net"
-      "176.101.178.133"
+      #"176.101.178.133"
     ];
 
     root = "/mini_local/www";
