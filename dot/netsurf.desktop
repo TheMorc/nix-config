@@ -1,0 +1,7 @@
+[Desktop Entry]
+Exec=netsurf-gtk3 http://biskupova.televiziastb.sk
+Name=Biskupová NetSurf
+Terminal=false
+OnlyShowIn=LXQt;
+Type=Application
+Version=1.0
