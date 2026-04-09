@@ -69,7 +69,6 @@
       sshpass
       sops
       sturmflut
-      tailscale
       tmate
       tmux
       unrar
