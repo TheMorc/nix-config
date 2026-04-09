@@ -79,6 +79,7 @@
       packages =
         nixpkgs.lib.recursiveUpdate
           (forAllSystems (system: {
+            mcgalaxy = nixpkgs.legacyPackages.${system}.callPackage ./packages/mcgalaxy.nix { };
           }))
           {
             x86_64-linux = {

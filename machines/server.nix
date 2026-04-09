@@ -90,6 +90,8 @@
       conky
       netsurf-browser
       classicube
+
+      inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.mcgalaxy
     ];
 
     lxqt.excludePackages = with pkgs; [
