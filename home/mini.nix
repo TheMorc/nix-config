@@ -5,8 +5,8 @@
     git = {
       enable = true;
       lfs.enable = true;
-      userName = "Richard Gráčik";
-      userEmail = "r.gracik@370.network";
+      settings.user.name = "Richard Gráčik";
+      settings.user.email = "r.gracik@370.network";
     };
     home-manager.enable = true;
   };
@@ -20,7 +20,9 @@
       ".config/autostart/conky.desktop".source = ../dot/conky.desktop;
       ".config/autostart/netsurf.desktop".source = ../dot/netsurf.desktop;
       ".config/gtk-3.0/settings.ini".source = ../dot/gtk_settings.ini;
+      ".config/gtk-3.0/settings.ini".force = true;
       ".config/netsurf/Choices".source = ../dot/netsurf_Choices;
+      ".config/netsurf/Choices".force = true;
       ".config/openbox/rc.xml".source = ../dot/openbox_rc.xml;
       ".config/openbox/rc.xml".force = true;
       ".config/lxqt/lxqt.conf".source = ../dot/lxqt.conf;
