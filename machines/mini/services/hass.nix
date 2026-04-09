@@ -5,6 +5,13 @@
   ...
 }:
 {
+  #homeassistant group workaround
+  system.activationScripts.homeassistantWorkaround = ''
+    mkdir -p /mini_local/homeassistant/
+    chown hass:hass -R /mini_local/homeassistant/.
+    chmod 770 -R /mini_local/homeassistant/
+  '';
+
   services.home-assistant = {
     enable = true;
     configDir = "/mini_local/homeassistant/";

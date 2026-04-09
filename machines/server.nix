@@ -125,6 +125,10 @@
         "wheel"
         "dialout"
         "tty"
+        "hass"
+        "immich"
+        "transmission"
+        "jellyfin"
       ]
       ++ lib.optionals config.networking.networkmanager.enable [ "networkmanager" ]
       ++ lib.optionals config.programs.wireshark.enable [ "wireshark" ]
