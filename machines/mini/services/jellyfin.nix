@@ -8,7 +8,7 @@
   #jellyfin group workaround
   system.activationScripts.jellyfinWorkaround = ''
     mkdir -p /mini_local/jellyfin/
-    chown transmission:transmission -R /mini_local/jellyfin/.
+    chown jellyfin:jellyfin -R /mini_local/jellyfin/.
     chmod 770 -R /mini_local/jellyfin/
   '';
 
