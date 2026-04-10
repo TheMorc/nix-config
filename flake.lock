@@ -1,5 +1,25 @@
 {
   "nodes": {
+    "cpupercent": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1775856393,
+        "narHash": "sha256-roKyc0yItFVtVPj1prnZPnTfSAtSlP2juXMLMS8VDY4=",
+        "owner": "TheMorc",
+        "repo": "CPUpercent",
+        "rev": "b3da072bcbf5dd4e1008286da230fab631b2a974",
+        "type": "github"
+      },
+      "original": {
+        "owner": "TheMorc",
+        "repo": "CPUpercent",
+        "type": "github"
+      }
+    },
     "dvbsky-firmware": {
       "inputs": {
         "nixpkgs": [
@@ -78,6 +98,7 @@
     },
     "root": {
       "inputs": {
+        "cpupercent": "cpupercent",
         "dvbsky-firmware": "dvbsky-firmware",
         "frostix": "frostix",
         "home-manager": "home-manager",

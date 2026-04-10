@@ -23,6 +23,11 @@
       url = "github:TheMorc/nix-dvbsky-firmware";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    cpupercent = {
+      url = "github:TheMorc/CPUpercent";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
