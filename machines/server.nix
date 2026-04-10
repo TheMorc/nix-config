@@ -90,6 +90,7 @@
       conky
       netsurf-browser
       classicube
+      inputs.cpupercent.packages.${pkgs.stdenv.hostPlatform.system}.default
     ];
 
     lxqt.excludePackages = with pkgs; [
