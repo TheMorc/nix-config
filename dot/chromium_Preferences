@@ -1,0 +1,15 @@
+{
+  "browser": {
+    "window_placement": {
+      "bottom": 9999,
+      "left": 0,
+      "maximized": true,
+      "right": 9999,
+      "top": 0,
+      "work_area_bottom": 1048,
+      "work_area_left": 0,
+      "work_area_right": 1920,
+      "work_area_top": 0
+    }
+  }
+}
