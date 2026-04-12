@@ -2,10 +2,10 @@
 Configuration files for my NixOS machines, for my NixOS shenanigans.
 
 ## Machines
-* **mini** - Mac mini M1 (aarch64-linux)
+* **mini** - Mac mini M1 ***(aarch64-linux)***
    - The main server in Biskupová
 
-* **LatitudeE7270** - Dell Latitude E7270 (x86_64-linux)
+* **LatitudeE7270** - Dell Latitude E7270 ***(x86_64-linux)***
    - The test environment for all other machines + throwaway 
 
 ## Universal installation:
@@ -22,6 +22,6 @@ Configuration files for my NixOS machines, for my NixOS shenanigans.
     ```
     
 ## Credits
-* @leandrofriedrich for the kanged repo
-* @ungeskriptet for all of the hints along the way
+* [@leandrofriedrich](https://github.com/leandrofriedrich) for the kanged repo
+* [@ungeskriptet](https://github.com/ungeskriptet) for all of the hints along the way
 * God for the sanity
