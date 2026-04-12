@@ -30,6 +30,8 @@
       ".config/lxqt/panel.conf".source = ../dot/lxqt_panel.conf;
       ".config/lxqt/panel.conf".force = true;
       ".config/conky/conky.conf".source = ../dot/conky.conf;
+      ".config/chromium/Default/Preferences".source = ../dot/chromium_Preferences;
+      ".config/chromium/Default/Preferences".force = true;
     };
   };
 }
