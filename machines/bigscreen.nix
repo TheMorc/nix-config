@@ -77,8 +77,8 @@
       variant = "qwerty";
     };
 
-    desktopManager = {
-      plasma6.enable = true;
+    desktopManager.plasma6.enable = true;
+    displayManager = {
       sddm.enable = true;
       autoLogin.user = "htpc";
       autoLogin.enable = true;
@@ -87,7 +87,7 @@
     };
   };
 
-  plasma6.excludePackages = with pkgs; [
+  environment.plasma6.excludePackages = with pkgs; [
     kdePackages.qrca
     kdePackages.okular
     kdePackages.elisa
