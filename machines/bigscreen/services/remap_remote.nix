@@ -20,18 +20,18 @@
   '';
 
   services.keyd = {
-      enable = true;
-      keyboards = {
-        default = {
-          ids = [ "*" ];
-          settings = {
-            main = {
-              "back" = "esc";
-              "homepage" = "macro(homepage f24)";
-            };
+    enable = true;
+    keyboards = {
+      default = {
+        ids = [ "*" ];
+        settings = {
+          main = {
+            "back" = "esc";
+            "homepage" = "macro(homepage f24)";
           };
         };
       };
-    };  
+    };
+  };
 
 }

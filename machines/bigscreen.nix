@@ -28,10 +28,7 @@
 
       inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.plasma-bigscreen
 
-
-
     ];
-
 
     sessionVariables = {
       XDG_CACHE_HOME = "$HOME/.cache";
@@ -70,7 +67,6 @@
     }
     // lib.optionalAttrs config.programs.zsh.enable { shell = pkgs.zsh; };
   };
-
 
   services = {
     usbmuxd.enable = true;
@@ -140,7 +136,7 @@
     firewall.enable = false;
     networkmanager.enable = true;
     firewall.checkReversePath = false;
-  	nftables.enable = true;
+    nftables.enable = true;
   };
 
   systemd.services.NetworkManager-wait-online.enable = true;

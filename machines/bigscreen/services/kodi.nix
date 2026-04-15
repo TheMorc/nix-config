@@ -8,13 +8,12 @@
 
   nixpkgs.config.kodi.enableAdvancedLauncher = true;
 
-
-    environment.systemPackages = [
-     (pkgs.kodi.withPackages (kodiPkgs: with kodiPkgs; [
-		pvr-hts
-      ]))
+  environment.systemPackages = [
+    (pkgs.kodi.withPackages (
+      kodiPkgs: with kodiPkgs; [
+        pvr-hts
+      ]
+    ))
   ];
-
-
 
 }
