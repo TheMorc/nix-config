@@ -8,6 +8,10 @@ Configuration files for my NixOS machines, for my NixOS shenanigans.
 * **LatitudeE7270** - Dell Latitude E7270 ***(x86_64-linux)***
    - The test environment for all other machines + throwaway 
 
+* **bigscreen** - HP ProDesk 600 G2 Desktop Mini ***(x86_64-linux)***
+   - A living room HTPC running KDE Plasma Bigscreen + Waydroid for Android apps
+
+   
 ## Universal installation:
 1. Install NixOS, duhh...
 2. Deploy:
