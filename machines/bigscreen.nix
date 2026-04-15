@@ -77,15 +77,27 @@
       variant = "qwerty";
     };
 
-    desktopManager.plasma6.enable = true;
-    displayManager.sddm.enable = true;
-    displayManager.autoLogin.user = "htpc";
-    displayManager.autoLogin.enable = true;
-    displayManager.sessionPackages = [inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.plasma-bigscreen];
-    displayManager.defaultSession = "plasma-bigscreen-wayland";
+    desktopManager = {
+      plasma6.enable = true;
+      sddm.enable = true;
+      autoLogin.user = "htpc";
+      autoLogin.enable = true;
+      sessionPackages = [ inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.plasma-bigscreen ];
+      defaultSession = "plasma-bigscreen-wayland";
+    };
   };
 
-  xdg.portal.configPackages = [inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.plasma-bigscreen];
+  plasma6.excludePackages = with pkgs; [
+    kdePackages.qrca
+    kdePackages.okular
+    kdePackages.elisa
+    kdePackages.discover
+    kdePackages.gwenview
+  ];
+
+  xdg.portal.configPackages = [
+    inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.plasma-bigscreen
+  ];
 
   time.timeZone = "Europe/Bratislava";
   console.keyMap = "sk-qwerty";
