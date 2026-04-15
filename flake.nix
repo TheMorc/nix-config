@@ -97,6 +97,7 @@
         nixpkgs.lib.recursiveUpdate
           (forAllSystems (system: {
             mcgalaxy = nixpkgs.legacyPackages.${system}.callPackage ./packages/mcgalaxy.nix { };
+            plasma-bigscreen = nixpkgs.legacyPackages.${system}.callPackage ./packages/plasma-bigscreen.nix { };
           }))
           {
             x86_64-linux = {
