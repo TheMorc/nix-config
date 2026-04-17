@@ -34,7 +34,7 @@
       gh
       unzip
       androidenv.androidPkgs.platform-tools
-
+      inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.bigscreen_curtain
       inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.plasma-bigscreen
       jellyfin-desktop
     ];

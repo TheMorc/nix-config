@@ -103,6 +103,9 @@
         nixpkgs.lib.recursiveUpdate
           (forAllSystems (system: {
             mcgalaxy = nixpkgs.legacyPackages.${system}.callPackage ./packages/mcgalaxy.nix { };
+            bigscreen_curtain =
+              nixpkgs.legacyPackages.${system}.callPackage ./packages/bigscreen_curtain.nix
+                { };
             plasma-bigscreen = nixpkgs.legacyPackages.${system}.callPackage ./packages/plasma-bigscreen.nix { };
           }))
           {
