@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=YouTube
+Exec=sh -c "pkill firefox || true; firefox --kiosk --no-remote --new-instance https://youtube.com/tv"
+Icon=/home/htpc/.local/share/youtube.png
+Terminal=false
+Type=Application
+Categories=Network;WebBrowser;
+StartupNotify=true
