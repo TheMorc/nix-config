@@ -32,9 +32,11 @@
       fastfetch
       wget
       gh
+      unzip
+      androidenv.androidPkgs.platform-tools
 
       inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.plasma-bigscreen
-
+      jellyfin-desktop
     ];
 
     sessionVariables = {
