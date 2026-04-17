@@ -1,0 +1,26 @@
+{ config, inputs, ... }:
+{
+
+  programs = {
+    git = {
+      enable = true;
+      lfs.enable = true;
+      settings.user.name = "Richard Gráčik";
+      settings.user.email = "r.gracik@370.network";
+    };
+    home-manager.enable = true;
+  };
+
+  home = {
+    username = "mini";
+    homeDirectory = "/home/mini";
+    stateVersion = "26.05";
+    file = {
+      ".ssh/id_ed25519.pub".source = ../dot/id_ed25519.pub;
+      ".local/share/applications/youtube.desktop".source = ../dot/youtube.desktop;
+      ".local/share/youtube.png".source = ../dot/youtube.png;
+      ".local/share/wayland_maximize.js".source = ../dot/waydroid_maximize.js;
+      ".local/share/wayland_minimize.js".source = ../dot/wayland_minimize.js;
+    };
+  };
+}
