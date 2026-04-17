@@ -14,6 +14,13 @@
     inputs.home-manager.nixosModules.home-manager
   ];
 
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    extraSpecialArgs = { inherit inputs; };
+    users.mini = ../home/bigscreen.nix;
+  };
+
   nixpkgs.config.allowUnfree = true;
   system.stateVersion = "26.05";
 
