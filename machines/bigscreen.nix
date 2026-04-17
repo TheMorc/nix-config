@@ -50,8 +50,6 @@
 
   };
 
-  
-
   boot = {
     kernel.sysctl."kernel.dmesg_restrict" = false;
     tmp.cleanOnBoot = true;

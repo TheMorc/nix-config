@@ -14,7 +14,6 @@
     hibernateKeyLongPress = "ignore";
   };
 
-
   services.udev.extraHwdb = ''
     evdev:name:MemsArt MA144 RF Controller System Control:*
       KEYBOARD_KEY_10081=f23

@@ -83,7 +83,7 @@
         system = "x86_64-linux";
         modules = [
           ./machines/bigscreen
-	  inputs.leocec.nixosModules.default
+          inputs.leocec.nixosModules.default
         ];
       };
 
