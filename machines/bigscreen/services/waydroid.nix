@@ -15,8 +15,8 @@
       wantedBy = [ "default.target" ];
     serviceConfig = {
       Type = "simple";
-      ExecStart = "${pkgs.waydroid}/bin/waydroid session start";
-      ExecStop = "${pkgs.waydroid}/bin/waydroid session stop";
+      ExecStart = "${pkgs.waydroid}/bin/waydroid";
+      ExecStop = "${pkgs.waydroid}/bin/waydroid container stop";
       
       KillMode = "mixed";
       
