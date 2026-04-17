@@ -12,8 +12,8 @@
   };
 
   home = {
-    username = "mini";
-    homeDirectory = "/home/mini";
+    username = "htpc";
+    homeDirectory = "/home/htpc";
     stateVersion = "26.05";
     file = {
       ".ssh/id_ed25519.pub".source = ../dot/id_ed25519.pub;

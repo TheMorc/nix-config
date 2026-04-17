@@ -18,7 +18,7 @@
     useGlobalPkgs = true;
     useUserPackages = true;
     extraSpecialArgs = { inherit inputs; };
-    users.mini = ../home/bigscreen.nix;
+    users.htpc = ../home/bigscreen.nix;
   };
 
   nixpkgs.config.allowUnfree = true;
