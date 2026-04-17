@@ -28,6 +28,11 @@
       url = "github:TheMorc/CPUpercent";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    leocec = {
+      url = "github:TheMorc/LeoCEC";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -78,6 +83,7 @@
         system = "x86_64-linux";
         modules = [
           ./machines/bigscreen
+	  inputs.leocec.nixosModules.default
         ];
       };
 
