@@ -1,0 +1,14 @@
+[Desktop Entry]
+Type=Application
+Name=SmartTube
+Exec=sh -c 'waydroid adb connect && qdbus org.kde.KWin /Scripting loadScript ~/.local/share/waydroid_maximize.js && qdbus org.kde.KWin /Scripting start && adb shell am start -n org.smarttube.stable/com.liskovsoft.smartyoutubetv2.tv.ui.main.SplashActivity'
+Icon=/home/htpc/.local/share/waydroid/data/icons/org.smarttube.stable.png
+Categories=X-WayDroid-App;
+X-Purism-FormFactor=Workstation;Mobile;
+Actions=app-settings;
+NoDisplay=false
+
+[Desktop Action app-settings]
+Name=App Settings
+Exec=waydroid app intent android.settings.APPLICATION_DETAILS_SETTINGS package:org.smarttube.stable
+Icon=/home/htpc/.local/share/waydroid/data/icons/com.android.settings.png

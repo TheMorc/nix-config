@@ -1,0 +1,14 @@
+[Desktop Entry]
+Type=Application
+Name=VU Player Pro
+Exec=waydroid app launch com.vupurple.player
+Icon=/home/htpc/.local/share/waydroid/data/icons/com.vupurple.player.png
+Categories=X-WayDroid-App;
+X-Purism-FormFactor=Workstation;Mobile;
+Actions=app-settings;
+NoDisplay=false
+
+[Desktop Action app-settings]
+Name=App Settings
+Exec=waydroid app intent android.settings.APPLICATION_DETAILS_SETTINGS package:com.vupurple.player
+Icon=/home/htpc/.local/share/waydroid/data/icons/com.android.settings.png

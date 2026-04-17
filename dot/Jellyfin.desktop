@@ -1,0 +1,14 @@
+[Desktop Entry]
+Type=Application
+Name=Jellyfin
+Exec=waydroid app launch org.jellyfin.androidtv
+Icon=/home/htpc/.local/share/waydroid/data/icons/org.jellyfin.androidtv.png
+Categories=X-WayDroid-App;
+X-Purism-FormFactor=Workstation;Mobile;
+Actions=app-settings;
+NoDisplay=false
+
+[Desktop Action app-settings]
+Name=App Settings
+Exec=waydroid app intent android.settings.APPLICATION_DETAILS_SETTINGS package:org.jellyfin.androidtv
+Icon=/home/htpc/.local/share/waydroid/data/icons/com.android.settings.png

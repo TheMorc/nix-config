@@ -21,6 +21,9 @@
       ".local/share/youtube.png".source = ../dot/youtube.png;
       ".local/share/wayland_maximize.js".source = ../dot/waydroid_maximize.js;
       ".local/share/wayland_minimize.js".source = ../dot/wayland_minimize.js;
+      ".local/share/applications/SmartTube.desktop".source = ../dot/SmartTube.desktop;
+      ".local/share/applications/VUPlayerPro.desktop".source = ../dot/VUPlayerPro.desktop;
+      ".local/share/applications/Jellyfin.desktop".source = ../dot/Jellyfin.desktop;
     };
   };
 }
