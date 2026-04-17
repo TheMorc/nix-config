@@ -27,4 +27,24 @@
       Restart = "on-failure";
     };
   };
+
+  systemd.user.services.waydroid-boothide = {
+    enable = true;
+    description = "Hide Waydroid Session during boot";
+
+    after = [ "waydroid-session.service" ];
+    requires = [ "waydroid-session.service" ];
+
+    script = ''
+      ${pkgs.coreutils}/bin/sleep 30
+      ${pkgs.qt6.qttools}/bin/qdbus org.kde.KWin /Scripting loadScript ~/.local/share/waydroid_minimize.js
+      ${pkgs.qt6.qttools}/bin/qdbus org.kde.KWin /Scripting start
+    '';
+
+    serviceConfig = {
+      Type = "oneshot";
+    };
+
+    wantedBy = [ "default.target" ];
+  };
 }
