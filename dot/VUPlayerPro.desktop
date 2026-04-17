@@ -1,7 +1,7 @@
 [Desktop Entry]
 Type=Application
 Name=VU Player Pro
-Exec=sh -c 'waydroid adb connect;qdbus org.kde.KWin /Scripting loadScript ~/.local/share/waydroid_maximize.js;qdbus org.kde.KWin /Scripting start;adb shell am start -n com.vupurple.player/com.vupurple.player.MainActivity' 
+Exec=bigscreen_curtain & sh -c 'waydroid adb connect;qdbus org.kde.KWin /Scripting loadScript ~/.local/share/waydroid_maximize.js;qdbus org.kde.KWin /Scripting start;adb shell am start -n com.vupurple.player/com.vupurple.player.MainActivity' 
 Icon=/home/htpc/.local/share/waydroid/data/icons/com.vupurple.player.png
 Categories=X-WayDroid-App;
 X-Purism-FormFactor=Workstation;Mobile;
