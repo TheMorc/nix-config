@@ -18,7 +18,7 @@
   };
 
   services.phpfpm.pools."www" = {
-    user = "nobody";
+    user = "nginx";
 
     settings = {
       "pm" = "dynamic";
@@ -28,6 +28,7 @@
       "pm.min_spare_servers" = 1;
       "pm.max_spare_servers" = 3;
       "pm.max_requests" = 500;
+      "security.limit_extensions" = ".php .html";
     };
 
     phpOptions = ''
@@ -70,12 +71,14 @@
       		expires 365d;
       		add_header Cache-Control "public, no-transform";
       	}
-      	location ~* \.(js|css|pdf|html|swf)$ {
+      	location ~* \.(js|css|pdf|swf)$ {
       		expires 30d;
       		add_header Cache-Control "public, no-transform";
       	}
 
       	rewrite ^/\.well-known/(host-meta|webfinger).* https://fed.brid.gy$request_uri? redirect;
+
+      	index index.html index.php;
 
       	gzip on;
       	gzip_vary on;
@@ -154,14 +157,17 @@
             add_header Cache-Control "public, no-transform";
         }
 
+        index index.html index.php;
+
         location ~ \.(php|html)$ {
+          include ${config.services.nginx.package}/conf/fastcgi_params;
 
+            fastcgi_pass  unix:${config.services.phpfpm.pools.www.socket};
+            fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
 
-          fastcgi_pass  unix:${config.services.phpfpm.pools.www.socket};
-          fastcgi_index index.php;
-          fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+            include ${pkgs.nginx}/conf/fastcgi.conf;
 
-          fastcgi_read_timeout 300;
+            fastcgi_read_timeout 300;
         }
 
         rewrite ^/\.well-known/(host-meta|webfinger).* https://fed.brid.gy$request_uri? redirect;
