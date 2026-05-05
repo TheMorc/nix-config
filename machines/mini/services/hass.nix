@@ -16,23 +16,108 @@
     enable = true;
     configDir = "/mini_local/homeassistant/";
     extraComponents = [
-      # Components required to complete the onboarding
       "analytics"
       "google_translate"
       "met"
       "radio_browser"
       "shopping_list"
-      # Recommended for fast zlib compression
-      # https://www.home-assistant.io/integrations/isal
       "isal"
+      "recorder"
+      "usage_prediction"
+      "history"
+      "energy"
+      "logbook"
+      "sonos"
+      "samsungtv"
+      "androidtv_remote"
+      "yeelight"
+      "cast"
+      "wled"
+      "tuya"
+      "upnp"
+      "esphome"
+      "bluetooth_adapters"
+      "xiaomi_ble"
+      "default_config"
+      "rflink"
+      "zha"
+      "opnsense"
     ];
+    customComponents = with pkgs.home-assistant-custom-components; [ midea_ac_lan ];
     config = {
-      # Includes dependencies for a basic setup
-      # https://www.home-assistant.io/integrations/default_config/
-      default_config = { };
+      default_config = {};
+
+      device_tracker = [
+        {
+          platform = "bluetooth_le_tracker";
+          track_new_devices = false;
+        }
+      ];
+
+      rflink = {
+        port = "/dev/serial/by-id/usb-Arduino__www.arduino.cc__Arduino_Mega_2560_12254501101131795664-if00";
+      };
+
+      switch = [
+        {
+          platform = "rflink";
+          devices = {
+            unitec_1804_01 = { };
+            unitec_1804_02 = { };
+            unitec_1804_03 = { };
+            unitec_1804_04 = { };
+          };
+        }
+      ];
+
+      light = [
+        {
+          platform = "rflink";
+          automatic_add = false;
+        }
+      ];
+
+      sensor = [
+        {
+          platform = "rflink";
+          devices = {
+            cresta_3601_temp = {
+              sensor_type = "temperature";
+            };
+            cresta_3601_hum = {
+              sensor_type = "humidity";
+            };
+          };
+          automatic_add = false;
+        }
+      ];
+
+      mqtt = {
+        sensor = [
+          {
+            state_topic = "cheerlightsRGB";
+            name = "CheerLights Farba";
+          }
+        ];
+      };
+
+      rest_command = {
+        cam_night = {
+          url = "http://root:1234@192.168.1.4/night/on";
+        };
+        cam_day = {
+          url = "http://root:1234@192.168.1.4/night/off";
+        };
+      };
+
+      zha = {
+        enable_quirks = true;
+        custom_quirks_path = "zha_quirks";
+      };
+
     };
-    extraPackages = ps: with ps; [ psycopg2 ];
-    config.recorder.db_url = "postgresql://@/hass";
+    #extraPackages = ps: with ps; [ psycopg2 ];
+    #config.recorder.db_url = "postgresql://@/hass";
   };
 
   services.home-assistant.config.http = {
@@ -40,4 +125,5 @@
     trusted_proxies = [ "::1" ];
     use_x_forwarded_for = true;
   };
+
 }
