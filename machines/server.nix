@@ -78,6 +78,7 @@
       zip
       zlib
       wget
+      pgloader
 
       milkytracker
       obs-studio
@@ -134,6 +135,7 @@
       ++ lib.optionals config.networking.networkmanager.enable [ "networkmanager" ]
       ++ lib.optionals config.programs.wireshark.enable [ "wireshark" ]
       ++ lib.optionals config.virtualisation.libvirtd.enable [ "libvirt" ];
+      hashedPasswordFile = "/mini_local/hashedPassword";
       openssh.authorizedKeys.keys = vars.sshPubKeys;
     }
     // lib.optionalAttrs config.programs.zsh.enable { shell = pkgs.zsh; };
@@ -154,19 +156,19 @@
 
     xserver = {
 
-    videoDrivers = [ "modesetting" ];
+      videoDrivers = [ "modesetting" ];
 
-    deviceSection = ''
-      Option "AllowEmptyInitialConfiguration" "true"
-    '';
+      deviceSection = ''
+        Option "AllowEmptyInitialConfiguration" "true"
+      '';
 
-    screenSection = ''
-      SubSection "Display"
-        Depth 24
-        Virtual 1366 768
-      EndSubSection
-    '';
-  };
+      screenSection = ''
+        SubSection "Display"
+          Depth 24
+          Virtual 1366 768
+        EndSubSection
+      '';
+    };
 
     xserver.enable = true;
     xserver.desktopManager.lxqt.enable = true;
