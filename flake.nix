@@ -33,6 +33,11 @@
       url = "github:TheMorc/LeoCEC";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    
+    apple-silicon-support = {
+      url = "github:nix-community/nixos-apple-silicon/main";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -93,7 +98,7 @@
           vars = import ./vars.nix;
           frostix = inputs.frostix.packages.x86_64-linux;
         };
-        system = "x86_64-linux";
+        system = "aarch64-linux";
         modules = [
           ./machines/mini
         ];
