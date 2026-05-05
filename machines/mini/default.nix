@@ -10,15 +10,17 @@
 {
   imports = [
     ./hardware-configuration.nix
+    inputs.apple-silicon-support.nixosModules.apple-silicon-support
     ../server.nix
     ./services
   ];
 
   networking.hostName = "mini";
 
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.efi.canTouchEfiVariables = false;
   boot.loader.systemd-boot.enable = lib.mkDefault true;
+
+  hardware.asahi.peripheralFirmwareDirectory = ./firmware;
 
   security.sudo.wheelNeedsPassword = false;
 }
