@@ -45,6 +45,16 @@
         "fruit:wipe_intentionally_left_blank_rfork" = "yes";
         "fruit:delete_empty_adfiles" = "yes";
       };
+      "mini" = {
+        "path" = "/home/mini";
+        "browseable" = "yes";
+        "read only" = "no";
+        "guest ok" = "yes";
+        "create mask" = "0644";
+        "directory mask" = "0755";
+        "force user" = "mini";
+        "force group" = "users";
+      };
       "mini_enterprise" = {
         "path" = "/mini_enterprise";
         "browseable" = "yes";
