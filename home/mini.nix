@@ -2,12 +2,12 @@
 {
 
   programs = {
-    git = {
-      enable = true;
-      lfs.enable = true;
-      settings.user.name = "Richard Gráčik";
-      settings.user.email = "r.gracik@370.network";
-    };
+    #git = {
+    #  enable = true;
+    #  lfs.enable = true;
+    #  settings.user.name = "Richard Gráčik";
+    #  settings.user.email = "r.gracik@370.network";
+    #};
     home-manager.enable = true;
   };
 

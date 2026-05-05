@@ -18,6 +18,11 @@
       fsType = "ext4";
     };
 
+  fileSystems."/mini_enterprise" =
+    { device = "/dev/disk/by-uuid/1566a320-0282-4adf-b35b-a9de8434368d";
+      fsType = "btrfs";
+    };
+
   fileSystems."/boot" =
     { device = "/dev/disk/by-uuid/DB3C-1F19";
       fsType = "vfat";
