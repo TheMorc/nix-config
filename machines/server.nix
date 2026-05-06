@@ -132,6 +132,7 @@
         "transmission"
         "jellyfin"
         "mcgalaxy"
+        "nginx"
       ]
       ++ lib.optionals config.networking.networkmanager.enable [ "networkmanager" ]
       ++ lib.optionals config.programs.wireshark.enable [ "wireshark" ]
