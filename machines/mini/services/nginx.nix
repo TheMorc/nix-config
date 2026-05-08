@@ -152,7 +152,7 @@
             expires 365d;
             add_header Cache-Control "public, no-transform";
         }
-        location ~* \.(js|css|pdf|html|swf)$ {
+        location ~* \.(js|css|pdf|swf)$ {
             expires 30d;
             add_header Cache-Control "public, no-transform";
         }
