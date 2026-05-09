@@ -35,6 +35,9 @@
       "wled"
       "tuya"
       "upnp"
+      "apple_tv"
+      "homekit"
+      "homekit_controller"
       "esphome"
       "bluetooth_adapters"
       "xiaomi_ble"
@@ -46,6 +49,14 @@
     customComponents = with pkgs.home-assistant-custom-components; [ midea_ac_lan ];
     config = {
       default_config = { };
+
+      frontend = {
+        themes = "!include_dir_merge_named themes";
+      };
+
+      automation = "!include automations.yaml";
+      script = "!include scripts.yaml";
+      scene = "!include scenes.yaml";
 
       device_tracker = [
         {
