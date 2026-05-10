@@ -14,6 +14,8 @@
     after = [ "network.target" ];
     wantedBy = [ "multi-user.target" ];
 
+    environment.LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib";
+
     serviceConfig = {
       Type = "simple";
 
