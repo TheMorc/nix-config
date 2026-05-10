@@ -45,7 +45,7 @@
     ];
     customComponents = with pkgs.home-assistant-custom-components; [ midea_ac_lan ];
     config = {
-      default_config = {};
+      default_config = { };
 
       device_tracker = [
         {
