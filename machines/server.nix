@@ -79,6 +79,7 @@
       zlib
       wget
       pgloader
+      libmysqlclient
 
       milkytracker
       obs-studio
