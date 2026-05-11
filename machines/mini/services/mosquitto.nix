@@ -14,5 +14,15 @@
         settings.allow_anonymous = true;
       }
     ];
+
+    bridges = {
+      cheerlightsRGB = {
+        addresses = [ { address = "mqtt.cheerlights.com"; port = 1883; } ];
+
+        topics = [
+          "cheerlightsRGB in"
+        ];
+      };
+    };
   };
 }
