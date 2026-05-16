@@ -13,9 +13,9 @@ in
 
     git.enable = true;
     htop.enable = true;
-    ssh = {
-      startAgent = true;
-    };
+    #ssh = {
+    #  startAgent = true;
+    #};
   };
 
   services.tailscale.enable = true;
