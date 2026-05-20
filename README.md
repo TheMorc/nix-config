@@ -11,6 +11,9 @@ Configuration files for my NixOS machines, for my NixOS shenanigans.
 * **bigscreen** - HP ProDesk 600 G2 Desktop Mini ***(x86_64-linux)***
    - A living room HTPC running KDE Plasma Bigscreen + Waydroid for Android apps
 
+* **jukebox** - ASUS ET1620i AiO ***(x86_64-linux)***
+   - Basement "audio jukebox" with Apple Music, internet radios and local libraries
+
    
 ## Universal installation:
 1. Install NixOS, duhh...
