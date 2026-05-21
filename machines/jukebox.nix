@@ -1,12 +1,22 @@
-{ pkgs, vars, lib, config, ... }:
+{
+  pkgs,
+  vars,
+  lib,
+  config,
+  ...
+}:
 
 {
 
+  imports = [
+    ../modules/zsh.nix
+  ];
+
   programs = {
-  
+
     git.enable = true;
 
-  ssh = {
+    ssh = {
       enableAskPassword = true;
     };
   };
@@ -31,19 +41,23 @@
     unzip
     zip
     zlib
+    adw-gtk3
+
     mpv
     vlc
+    rhythmbox
+    cider-2
     yt-dlp
   ];
 
   services = {
-  
-  displayManager.autoLogin.enable  = true;
-  displayManager.autoLogin.user = "jukebox";
 
-  desktopManager.gnome.enable = true;
+    displayManager.autoLogin.enable = true;
+    displayManager.autoLogin.user = "jukebox";
+
+    desktopManager.gnome.enable = true;
     displayManager.gdm.enable = true;
-    
+
     printing.enable = false;
     pulseaudio.enable = false;
     pipewire = {
@@ -60,7 +74,26 @@
     };
   };
 
-  environment.gnome.excludePackages = with pkgs; [ gnome-tour gnome-user-docs ];
+  environment.gnome.excludePackages = with pkgs; [
+    gnome-music
+    snapshot
+    gnome-connections
+    baobab
+    gnome-contacts
+    simple-scan
+    gnome-tour
+    gnome-user-docs
+    gnome-maps
+    gnome-logs
+    gnome-clocks
+    gnome-weather
+    gnome-characters
+    gnome-font-viewer
+    gnome-disk-utility
+    gnome-calendar
+    gnome-calculator
+    yelp
+  ];
 
   environment.sessionVariables.SSH_ASKPASS_REQUIRE = "prefer";
 
@@ -69,7 +102,7 @@
   # Required for WireGuard
   networking.firewall.checkReversePath = false;
 
-boot.kernel.sysctl."kernel.dmesg_restrict" = false;
+  boot.kernel.sysctl."kernel.dmesg_restrict" = false;
   boot.tmp.cleanOnBoot = true;
   boot.supportedFilesystems = [ "fuse" ];
   programs.fuse.userAllowOther = true;
@@ -100,7 +133,7 @@ boot.kernel.sysctl."kernel.dmesg_restrict" = false;
     variant = "qwerty";
   };
 
-i18n = {
+  i18n = {
     defaultLocale = "sk_SK.UTF-8";
     extraLocaleSettings = lib.genAttrs [
       "LC_ADDRESS"
@@ -115,7 +148,7 @@ i18n = {
     ] (var: "sk_SK.UTF-8");
   };
 
-   users = {
+  users = {
     mutableUsers = false;
     users.jukebox = {
       isNormalUser = true;
