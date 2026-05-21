@@ -17,7 +17,12 @@
 
     bridges = {
       cheerlightsRGB = {
-        addresses = [ { address = "mqtt.cheerlights.com"; port = 1883; } ];
+        addresses = [
+          {
+            address = "mqtt.cheerlights.com";
+            port = 1883;
+          }
+        ];
 
         topics = [
           "cheerlightsRGB in"
