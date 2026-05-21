@@ -6,10 +6,10 @@ Configuration files for my NixOS machines, for my NixOS shenanigans.
    - The main server in Biskupová
 
 * **LatitudeE7270** - Dell Latitude E7270 ***(x86_64-linux)***
-   - The test environment for all other machines + throwaway 
+   - The test environment for all other machines + throwaway laptop without a battery these days
 
 * **bigscreen** - HP ProDesk 600 G2 Desktop Mini ***(x86_64-linux)***
-   - A living room HTPC running KDE Plasma Bigscreen + Waydroid for Android apps
+   - Basement HTPC running KDE Plasma Bigscreen + Waydroid for Android apps on a plasma TV
 
 * **jukebox** - ASUS ET1620i AiO ***(x86_64-linux)***
    - Basement "audio jukebox" with Apple Music, internet radios and local libraries
