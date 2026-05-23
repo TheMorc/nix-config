@@ -71,8 +71,10 @@
       core-apps.enable = true;
       core-developer-tools.enable = false;
       games.enable = false;
+      at-spi2-core.enable = true;
     };
   };
+
 
   environment.gnome.excludePackages = with pkgs; [
     gnome-music
