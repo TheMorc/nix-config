@@ -38,6 +38,11 @@
       url = "github:nix-community/nixos-apple-silicon/main";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    funnyprint = {
+      url = "github:ValdikSS/printer-driver-funnyprint";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -115,6 +120,19 @@
           ./machines/jukebox
         ];
       };
+
+     nixosConfigurations.KankerPad = nixpkgs.lib.nixosSystem {
+        specialArgs = {
+          inherit inputs;
+          vars = import ./vars.nix;
+          frostix = inputs.frostix.packages.x86_64-linux;
+        };
+        system = "x86_64-linux";
+        modules = [
+          ./machines/kankerpad
+          inputs.funnyprint.nixosModules.funnyprint
+        ];
+     };
 
       packages =
         nixpkgs.lib.recursiveUpdate
