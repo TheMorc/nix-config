@@ -5,15 +5,15 @@
   ...
 }:
 {
-  systemd.timers."magio-xmltv" = {
+  systemd.user.timers."magio-xmltv" = {
     wantedBy = [ "timers.target" ];
     timerConfig = {
       OnCalendar = "Sat *-*-* 3:00:00";
-      Unit = "magio-xml.service";
+      Unit = "magio-xmltv.service";
     };
   };
 
-  systemd.services."magio-xmltv" = {
+  systemd.user.services."magio-xmltv" = {
     script = ''
       ${pkgs.bash}/bin/bash -c "cd /mini_local/magio-xmltv/server;source bin/activate; source credentials;flask run --host=0.0.0.0"
       ${pkgs.git}/bin/git -C /mini_local/magio-xmltv fetch
@@ -27,7 +27,7 @@
     '';
     serviceConfig = {
       Type = "oneshot";
-      User = "mini";
+      RemainAfterExit = true;
     };
 
   };

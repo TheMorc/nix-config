@@ -5,15 +5,15 @@
   ...
 }:
 {
-  systemd.timers."skylink-xmltv" = {
+  systemd.user.timers."skylink-xmltv" = {
     wantedBy = [ "timers.target" ];
     timerConfig = {
       OnCalendar = "Sun *-*-* 3:00:00";
-      Unit = "skylink-xml.service";
+      Unit = "skylink-xmltv.service";
     };
   };
 
-  systemd.services."skylink-xmltv" = {
+  systemd.user.services."skylink-xmltv" = {
     script = ''
       ${pkgs.git}/bin/git -C /mini_local/skylink-xmltv fetch
       ${pkgs.git}/bin/git -C /mini_local/skylink-xmltv pull
@@ -26,7 +26,7 @@
     '';
     serviceConfig = {
       Type = "oneshot";
-      User = "mini";
+      RemainAfterExit = true;
     };
 
   };
