@@ -9,6 +9,7 @@
   imports = [
     ./hardware-configuration.nix
     ../jukebox.nix
+    ./services
   ];
 
   networking.hostName = "jukebox";
