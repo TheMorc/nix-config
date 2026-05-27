@@ -84,16 +84,36 @@
         ]
       },
       "locked": {
-        "lastModified": 1778704583,
-        "narHash": "sha256-KMHn8O4dJGdPjYWWRazWiN5NEzTZ2iNzfriouzmojes=",
+        "lastModified": 1779827321,
+        "narHash": "sha256-pUOUn2C1YkkGrY7k5CQ7w1O1Oc/FwMKbYZUJ9gUzqsQ=",
         "owner": "shomykohai",
         "repo": "frostix",
-        "rev": "64787a5c773f416f5bb538f57cc2f77a9267b598",
+        "rev": "432178d03fe85b41840040aaf354759e74a019dc",
         "type": "github"
       },
       "original": {
         "owner": "shomykohai",
         "repo": "frostix",
+        "type": "github"
+      }
+    },
+    "funnyprint": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1760804691,
+        "narHash": "sha256-wxGOvBP7yyFSE8yiUHMCMzYbCpiLjfKB/mjPa9CcQKQ=",
+        "owner": "ValdikSS",
+        "repo": "printer-driver-funnyprint",
+        "rev": "cc61609c75d903366820fc13384818b55bc87677",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ValdikSS",
+        "repo": "printer-driver-funnyprint",
         "type": "github"
       }
     },
@@ -159,6 +179,7 @@
         "cpupercent": "cpupercent",
         "dvbsky-firmware": "dvbsky-firmware",
         "frostix": "frostix",
+        "funnyprint": "funnyprint",
         "home-manager": "home-manager",
         "leocec": "leocec",
         "nixpkgs": "nixpkgs",
