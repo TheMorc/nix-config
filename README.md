@@ -2,6 +2,9 @@
 Configuration files for my NixOS machines, for my NixOS shenanigans.
 
 ## Machines
+* **KankerPad** - Lenovo ThinkPad L15 Gen1 ***(x86_64-linux)***
+   - Leo's e-waste laptop
+
 * **mini** - Mac mini M1 ***(aarch64-linux)***
    - The main server in Biskupová
 
@@ -14,7 +17,7 @@ Configuration files for my NixOS machines, for my NixOS shenanigans.
 * **jukebox** - ASUS ET1620i AiO ***(x86_64-linux)***
    - Basement "audio jukebox" with Apple Music, internet radios and local libraries
 
-   
+
 ## Universal installation:
 1. Install NixOS, duhh...
 2. Deploy:
@@ -27,7 +30,7 @@ Configuration files for my NixOS machines, for my NixOS shenanigans.
 	```
     sudo reboot
     ```
-    
+
 ## Credits
 * [@leandrofriedrich](https://github.com/leandrofriedrich) for the kanged repo
 * [@ungeskriptet](https://github.com/ungeskriptet) for all of the hints along the way
