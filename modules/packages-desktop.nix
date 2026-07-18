@@ -34,7 +34,7 @@ in
   };
 
   environment.systemPackages = with pkgs; [
-    bitwarden-desktop
+    #bitwarden-desktop
     gimp3-with-plugins
     ifuse
     kdePackages.sddm-kcm
