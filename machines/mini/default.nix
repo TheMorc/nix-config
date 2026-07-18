@@ -41,7 +41,6 @@
   hardware.firmware = [ inputs.dvbsky-firmware.packages.${pkgs.stdenv.hostPlatform.system}.default ];
 
   environment = {
-
     systemPackages = with pkgs; [
       android-tools
       appimage-run
@@ -147,11 +146,6 @@
     usbmuxd.enable = true;
     flatpak.enable = true;
 
-    xserver.xkb = {
-      layout = "sk";
-      variant = "qwerty";
-    };
-
     xserver = {
 
       videoDrivers = [ "modesetting" ];
@@ -178,8 +172,6 @@
   
  
   programs = {
-    htop.enable = true;
-
     chromium.enable = true;
 
     firefox = {

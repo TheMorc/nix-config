@@ -18,10 +18,6 @@
 
   networking.hostName = "bigscreen";
 
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.loader.efi.canTouchEfiVariables = true;
-  
-
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
@@ -29,9 +25,7 @@
     users.htpc = ../home/bigscreen.nix;
   };
 
-
   environment = {
-
     systemPackages = with pkgs; [
       fastfetch
       wget
@@ -42,7 +36,6 @@
       inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.plasma-bigscreen
       jellyfin-desktop
     ];
-
   };
 
   users = {
@@ -70,11 +63,6 @@
     usbmuxd.enable = true;
     flatpak.enable = true;
 
-    xserver.xkb = {
-      layout = "sk";
-      variant = "qwerty";
-    };
-
     desktopManager.plasma6.enable = true;
     displayManager = {
       sddm.enable = true;
@@ -98,8 +86,6 @@
   ];
 
   programs = {
-    htop.enable = true;
-
     firefox = {
       enable = true;
       preferences = {

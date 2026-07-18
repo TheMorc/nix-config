@@ -46,7 +46,6 @@
   ];
 
   services = {
-
     displayManager.autoLogin.enable = true;
     displayManager.autoLogin.user = "jukebox";
 
