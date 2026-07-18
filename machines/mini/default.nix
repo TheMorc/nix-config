@@ -28,9 +28,9 @@
   };
 
   boot.loader.efi.canTouchEfiVariables = false;
-  
+
   hardware.asahi.peripheralFirmwareDirectory = ./firmware;
-  
+
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
@@ -169,8 +169,6 @@
     displayManager.autoLogin.enable = true;
   };
 
-  
- 
   programs = {
     chromium.enable = true;
 

@@ -121,7 +121,7 @@
         ];
       };
 
-     nixosConfigurations.KankerPad = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.KankerPad = nixpkgs.lib.nixosSystem {
         specialArgs = {
           inherit inputs;
           vars = import ./vars.nix;
@@ -132,7 +132,7 @@
           ./machines/kankerpad
           inputs.funnyprint.nixosModules.funnyprint
         ];
-     };
+      };
 
       packages =
         nixpkgs.lib.recursiveUpdate

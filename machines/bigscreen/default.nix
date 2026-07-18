@@ -14,7 +14,6 @@
     ./modules
     inputs.home-manager.nixosModules.home-manager
   ];
-  
 
   networking.hostName = "bigscreen";
 

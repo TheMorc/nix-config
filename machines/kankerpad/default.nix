@@ -19,10 +19,9 @@
     printing.enable = true;
   };
 
-  
   console.keyMap = "de";
   services.xserver.xkb.layout = "de";
-  
+
   i18n = {
     defaultLocale = "en_US.UTF-8";
     extraLocaleSettings = lib.genAttrs [
