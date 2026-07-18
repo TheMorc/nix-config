@@ -10,7 +10,7 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ../desktop.nix
+    ../desktop-leo.nix
   ];
 
   networking.hostName = "KankerPad";

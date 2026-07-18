@@ -8,7 +8,7 @@
 {
   imports = [
     ../modules/packages-common.nix
-    ../modules/users.nix
+    ../modules/users-leo.nix
     ../modules/virtualization.nix
     ../modules/zsh.nix
   ];
