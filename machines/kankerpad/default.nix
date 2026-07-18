@@ -1,5 +1,3 @@
-# Lenovo ThinkPad L15
-
 {
   inputs,
   pkgs,
@@ -10,14 +8,33 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ../desktop-leo.nix
+    ./modules
   ];
 
   networking.hostName = "KankerPad";
 
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.systemd-boot.enable = lib.mkDefault true;
+  services = {
+    desktopManager.plasma6.enable = true;
+    displayManager.sddm.enable = true;
+    printing.enable = true;
+  };
 
-  security.sudo.wheelNeedsPassword = false;
+  
+  console.keyMap = "de";
+  services.xserver.xkb.layout = "de";
+  
+  i18n = {
+    defaultLocale = "en_US.UTF-8";
+    extraLocaleSettings = lib.genAttrs [
+      "LC_ADDRESS"
+      "LC_IDENTIFICATION"
+      "LC_NAME"
+      "LC_MEASUREMENT"
+      "LC_NUMERIC"
+      "LC_MONETARY"
+      "LC_PAPER"
+      "LC_TELEPHONE"
+      "LC_TIME"
+    ] (var: "de_DE.UTF-8");
+  };
 }

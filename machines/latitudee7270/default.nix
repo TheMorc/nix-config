@@ -1,5 +1,3 @@
-# Dell Latitude E7270
-
 {
   inputs,
   pkgs,
@@ -10,14 +8,14 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ../desktop.nix
+    ./modules
   ];
 
   networking.hostName = "LatitudeE7270";
 
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.systemd-boot.enable = lib.mkDefault true;
-
-  security.sudo.wheelNeedsPassword = false;
+  services = {
+    desktopManager.plasma6.enable = true;
+    displayManager.sddm.enable = true;
+    printing.enable = true;
+  };
 }
