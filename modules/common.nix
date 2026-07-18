@@ -58,10 +58,10 @@ boot.loader.efi.canTouchEfiVariables = true;
     askPassword = lib.getExe pkgs.kdePackages.ksshaskpass;
   };
   
-  console.keyMap = "sk-qwerty";
+  console.keyMap = lib.mkDefault "sk-qwerty";
   services.xserver.xkb = {
-    layout = "sk";
-    variant = "qwerty";
+    layout = lib.mkDefault "sk";
+    variant = lib.mkDefault "qwerty";
   };
   
   security.sudo.wheelNeedsPassword = false;
@@ -77,8 +77,8 @@ boot.loader.efi.canTouchEfiVariables = true;
 
   
   i18n = {
-    defaultLocale = "en_US.UTF-8";
-    extraLocaleSettings = lib.genAttrs [
+    defaultLocale = lib.mkDefault "en_US.UTF-8";
+    extraLocaleSettings = lib.mkDefault ( lib.genAttrs [
       "LC_ADDRESS"
       "LC_IDENTIFICATION"
       "LC_NAME"
@@ -88,7 +88,8 @@ boot.loader.efi.canTouchEfiVariables = true;
       "LC_PAPER"
       "LC_TELEPHONE"
       "LC_TIME"
-    ] (var: "sk_SK.UTF-8");
+    ] (var: "sk_SK.UTF-8")
+    );
   };
   
   nix = {
