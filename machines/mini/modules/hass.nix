@@ -46,7 +46,7 @@
       "zha"
       "opnsense"
     ];
-    customComponents = with pkgs.home-assistant-custom-components; [ midea_ac_lan ];
+    customComponents = with pkgs.home-assistant-custom-components; [ midea_ac_lan tuya_local ];
     config = {
       default_config = { };
 
