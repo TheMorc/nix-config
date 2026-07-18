@@ -35,7 +35,7 @@
     useGlobalPkgs = true;
     useUserPackages = true;
     extraSpecialArgs = { inherit inputs; };
-    users.mini = ../home/mini.nix;
+    users.mini = ../../home/mini.nix;
   };
 
   hardware.firmware = [ inputs.dvbsky-firmware.packages.${pkgs.stdenv.hostPlatform.system}.default ];

@@ -18,7 +18,7 @@
   
   security.rtkit.enable = true;
 
-boot.kernelPackages = pkgs.linuxPackages_latest;
+boot.kernelPackages = lib.mkDefault pkgs.linuxPackages_latest;
 boot.loader.efi.canTouchEfiVariables = lib.mkDefault true;
   boot.loader.systemd-boot.enable = lib.mkDefault true;
   

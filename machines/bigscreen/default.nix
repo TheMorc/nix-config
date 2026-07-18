@@ -22,7 +22,7 @@
     useGlobalPkgs = true;
     useUserPackages = true;
     extraSpecialArgs = { inherit inputs; };
-    users.htpc = ../home/bigscreen.nix;
+    users.htpc = ../../home/bigscreen.nix;
   };
 
   environment = {
