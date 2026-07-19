@@ -42,9 +42,9 @@
 
   services.openssh = {
     enable = true;
-    settings.PasswordAuthentication = false;
-    settings.KbdInteractiveAuthentication = false;
-    ports = [
+    settings.PasswordAuthentication = lib.mkDefault false;
+    settings.KbdInteractiveAuthentication = lib.mkDefault false;
+    ports = lib.mkDefault [
       22
       24
     ];
