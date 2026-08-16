@@ -29,6 +29,7 @@
 
   boot.loader.efi.canTouchEfiVariables = false;
 
+  hardware.asahi.enable = true;
   hardware.asahi.peripheralFirmwareDirectory = ./firmware;
 
   home-manager = {
@@ -74,6 +75,7 @@
       pkg-config
       pv
       python3
+      python3Packages.pip
       ripgrep
       rsync
       sshpass

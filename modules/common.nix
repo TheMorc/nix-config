@@ -12,7 +12,7 @@
     firewall.enable = false;
     networkmanager.enable = true;
     firewall.checkReversePath = false;
-    nftables.enable = true;
+    #nftables.enable = true; maybe only waydroid related
   };
   systemd.services.NetworkManager-wait-online.enable = true;
 
