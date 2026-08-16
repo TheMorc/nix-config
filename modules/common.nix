@@ -53,7 +53,8 @@
   programs.ssh = {
     startAgent = true;
     enableAskPassword = true;
-    askPassword = lib.getExe pkgs.kdePackages.ksshaskpass;
+    askPassword = "${pkgs.x11_ssh_askpass}/libexec/x11-ssh-askpass";
+    #askPassword = lib.getExe pkgs.kdePackages.ksshaskpass;
   };
 
   console.keyMap = lib.mkDefault "sk-qwerty";
