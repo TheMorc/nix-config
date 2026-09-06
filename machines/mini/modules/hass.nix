@@ -45,9 +45,10 @@
       "rflink"
       "zha"
       "opnsense"
+      "midea"
     ];
    customComponents = with pkgs.home-assistant-custom-components; [
-      midea_ac_lan
+      #midea_ac_lan
       tuya_local
     ];
     config = {
