@@ -46,6 +46,7 @@
       "zha"
       "opnsense"
       "midea"
+      "nut"
     ];
    customComponents = with pkgs.home-assistant-custom-components; [
       #midea_ac_lan
