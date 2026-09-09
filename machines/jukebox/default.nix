@@ -1,4 +1,6 @@
 {
+  config,
+  vars,
   inputs,
   pkgs,
   lib,
@@ -37,6 +39,7 @@
     zip
     zlib
     adw-gtk3
+    gh
 
     mpv
     vlc
@@ -100,6 +103,25 @@
       openssh.authorizedKeys.keys = vars.sshPubKeys;
     }
     // lib.optionalAttrs config.programs.zsh.enable { shell = pkgs.zsh; };
+  };
+
+  i18n.defaultLocale = "sk_SK.UTF-8";
+
+  #gnome has a custom startagent
+  programs.ssh = {
+    startAgent = false;
+  };
+
+  #baytrail reboot "fix" with sysrx otherwise systemd-reboot makes it hang, oops
+  systemd.services.systemd-reboot = {
+    unitConfig = {
+      SuccessAction = "none";
+    };
+
+    serviceConfig = {
+      Type = "oneshot";
+      ExecStart = "${pkgs.bash}/bin/bash -c 'echo b > /proc/sysrq-trigger'";
+    };
   };
 
 }
