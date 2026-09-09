@@ -8,6 +8,8 @@
 
   virtualisation.waydroid.enable = true;
 
+  networking.nftables.enable = true;
+
   systemd.user.services.waydroid-session = {
     enable = true;
     description = "Waydroid User Session";
