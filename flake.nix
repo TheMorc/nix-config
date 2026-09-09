@@ -153,7 +153,7 @@
             bigscreen_curtain =
               nixpkgs.legacyPackages.${system}.callPackage ./packages/bigscreen_curtain.nix
                 { };
-            plasma-bigscreen = nixpkgs.legacyPackages.${system}.callPackage ./packages/plasma-bigscreen.nix { };
+            #plasma-bigscreen = nixpkgs.legacyPackages.${system}.callPackage ./packages/plasma-bigscreen.nix { };
           }))
           {
             x86_64-linux = {

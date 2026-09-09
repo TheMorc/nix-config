@@ -32,7 +32,8 @@
       unzip
       androidenv.androidPkgs.platform-tools
       inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.bigscreen_curtain
-      inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.plasma-bigscreen
+      #inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.plasma-bigscreen
+      kdePackages.plasma-bigscreen
       jellyfin-desktop
     ];
   };
@@ -67,7 +68,8 @@
       sddm.enable = true;
       autoLogin.user = "htpc";
       autoLogin.enable = true;
-      sessionPackages = [ inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.plasma-bigscreen ];
+      #sessionPackages = [ inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.plasma-bigscreen ];
+      sessionPackages = [ pkgs.kdePackages.plasma-bigscreen ];
       defaultSession = "plasma-bigscreen-wayland";
     };
   };
@@ -81,7 +83,23 @@
   ];
 
   xdg.portal.configPackages = [
-    inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.plasma-bigscreen
+    #inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.plasma-bigscreen
+    pkgs.kdePackages.plasma-bigscreen
+  ];
+
+  # https://discourse.nixos.org/t/getting-kde-plasma-bigscreen-to-work-on-nixos/79086
+  nixpkgs.overlays = [
+    (final: prev: {
+      kdePackages = prev.kdePackages // {
+        plasma-bigscreen = prev.kdePackages.plasma-bigscreen.overrideAttrs (old: {
+          buildInputs = (old.buildInputs or [ ]) ++ [ prev.kdePackages.kdeconnect-kde ];
+          preFixup = ''
+            wrapQtApp $out/bin/plasma-bigscreen-wayland \
+              --prefix QML2_IMPORT_PATH : "${prev.kdePackages.kdeconnect-kde}/lib/qt-6/qml"
+          '';
+        });
+      };
+    })
   ];
 
   programs = {
