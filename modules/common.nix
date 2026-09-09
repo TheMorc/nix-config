@@ -51,7 +51,7 @@
   };
 
   programs.ssh = {
-    startAgent = true;
+    startAgent = lib.mkDefault true;
     enableAskPassword = true;
     askPassword = "${pkgs.x11_ssh_askpass}/libexec/x11-ssh-askpass";
     #askPassword = lib.getExe pkgs.kdePackages.ksshaskpass;
