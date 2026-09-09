@@ -1,8 +1,16 @@
-{ config, modulesPath, pkgs, lib, ... }:
+{
+  config,
+  modulesPath,
+  pkgs,
+  lib,
+  ...
+}:
 {
   imports = [ (modulesPath + "/virtualisation/proxmox-lxc.nix") ];
 
-  nix.settings = { sandbox = false; };  
+  nix.settings = {
+    sandbox = false;
+  };
 
   proxmoxLXC = {
     manageNetwork = false;
@@ -14,15 +22,15 @@
   services.openssh = {
     openFirewall = true;
     settings = {
-        PermitRootLogin = "yes";
-        PasswordAuthentication = true;
-        PermitEmptyPasswords = "yes";
+      PermitRootLogin = "yes";
+      PasswordAuthentication = true;
+      PermitEmptyPasswords = "yes";
     };
   };
-  
+
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 
   boot.loader.systemd-boot.enable = false;
-  
+
   system.stateVersion = "26.05";
 }
