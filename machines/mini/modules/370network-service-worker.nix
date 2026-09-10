@@ -16,6 +16,16 @@
 
     environment.LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib";
 
+    path = with pkgs; [
+      bash
+      coreutils
+      curl
+      gnused
+      gnugrep
+      gawk
+      bc
+    ];
+
     serviceConfig = {
       Type = "simple";
 

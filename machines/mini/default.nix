@@ -92,6 +92,9 @@
       wget
       pgloader
       libmysqlclient
+      mariadb-connector-c.dev
+      mariadb.client
+      bc
 
       milkytracker
       obs-studio
