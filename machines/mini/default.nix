@@ -95,6 +95,7 @@
       mariadb-connector-c.dev
       mariadb.client
       bc
+      nh
 
       milkytracker
       obs-studio

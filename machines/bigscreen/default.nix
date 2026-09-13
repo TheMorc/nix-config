@@ -35,6 +35,7 @@
       #inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.plasma-bigscreen
       kdePackages.plasma-bigscreen
       jellyfin-desktop
+      nh
     ];
   };
 

@@ -32,7 +32,7 @@ in
     shellAliases = {
       compress-vid = "${ffmpeg} -vcodec libx264 -crf 28 output.mp4 -i";
       rp = "realpath";
-      switch-nixos = "sudo nixos-rebuild switch --flake path:.#${config.networking.hostName}";
+      switch-nixos = "nh os switch ~/nix-config -LR --accept-flake-config --show-activation-logs";
     };
 
     interactiveShellInit = ''

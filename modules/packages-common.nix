@@ -67,6 +67,6 @@ in
     v4l-utils
     zip
     zlib
-
+    nh
   ];
 }
