@@ -5,6 +5,6 @@
   ...
 }:
 {
-  #I HATE UNIFI
-  #services.unifi.enable = true;
+  services.unifi.enable = true;
+  services.unifi.mongodbPackage = pkgs.mongodb-ce;
 }
