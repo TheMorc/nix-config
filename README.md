@@ -9,7 +9,7 @@ Configuration files for my NixOS machines, for my NixOS shenanigans.
    - The main server in Biskupová
 
 * **midi** - HP EliteDesk 705 G4 MT ***(x86_64-linux)***
-   - Leo's main PVE+NixOS server
+   - Leo's main NixOS server
 
 * **LatitudeE7270** - Dell Latitude E7270 ***(x86_64-linux)***
    - The test environment for all other machines + throwaway laptop without a battery these days
