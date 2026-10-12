@@ -59,7 +59,7 @@ in
     sops
     sturmflut
     tailscale
-    tmate
+    upterm
     tmux
     unrar
     unzip

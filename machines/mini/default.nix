@@ -81,7 +81,7 @@
       sshpass
       sops
       sturmflut
-      tmate
+      upterm
       tmux
       unrar
       unzip
