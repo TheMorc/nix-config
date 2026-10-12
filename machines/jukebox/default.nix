@@ -41,7 +41,7 @@
     adw-gtk3
     gh
     nh
- 
+
     mpv
     vlc
     rhythmbox
