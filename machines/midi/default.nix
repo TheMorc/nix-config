@@ -52,6 +52,8 @@
         "wheel"
         "dialout"
         "tty"
+        "immich"
+        "nginx"
       ]
       ++ lib.optionals config.networking.networkmanager.enable [ "networkmanager" ]
       ++ lib.optionals config.programs.wireshark.enable [ "wireshark" ]
