@@ -46,13 +46,23 @@
         "fruit:delete_empty_adfiles" = true;
       };
       "midi" = {
-        "path" = "/home/midi";
+        "path" = "/tank/share/midi";
         "browseable" = "yes";
         "read only" = "no";
         "guest ok" = "yes";
         "create mask" = "0644";
         "directory mask" = "0755";
-        "force user" = "mini";
+        "force user" = "midi";
+        "force group" = "users";
+      };
+      "maikf" = {
+        "path" = "/tank/shares/maikf";
+        "browseable" = "yes";
+        "read only" = "no";
+        "guest ok" = "yes";
+        "create mask" = "0644";
+        "directory mask" = "0755";
+        "force user" = "maikf";
         "force group" = "users";
       };
     };

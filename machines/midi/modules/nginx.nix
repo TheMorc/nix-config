@@ -47,12 +47,9 @@
       "leandro.funfeuro.net"
     ];
 
-    root = "/home/midi/www";
+    root = "/tank/services/www";
 
     extraConfig = ''
-          listen       80;
-          listen       [::]:80;
-
       	client_body_buffer_size 50000M;
       	client_max_body_size 50000M;
 
