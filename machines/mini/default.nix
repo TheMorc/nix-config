@@ -175,6 +175,26 @@
     displayManager.autoLogin.enable = true;
   };
 
+  nixpkgs.overlays = [
+    (final: prev: {
+      lxqt = prev.lxqt.overrideScope (
+        lxqtFinal: lxqtPrev: {
+          lxqt-config = lxqtPrev.lxqt-config.overrideAttrs (oldAttrs: {
+            postPatch = (oldAttrs.postPatch or "") + ''
+              substituteInPlace lxqt-config-monitor/monitorpicture.cpp \
+                --replace-fail '#include "monitorpicture.h"' '#include "monitorpicture.h"
+              #include <KF6/KScreen/kscreen/screen.h>'
+
+              substituteInPlace lxqt-config-monitor/kscreenutils.cpp \
+                --replace-fail '#include "kscreenutils.h"' '#include "kscreenutils.h"
+              #include <KF6/KScreen/kscreen/screen.h>'
+            '';
+          });
+        }
+      );
+    })
+  ];
+
   programs = {
     chromium.enable = true;
 
