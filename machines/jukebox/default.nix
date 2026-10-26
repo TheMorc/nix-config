@@ -11,12 +11,20 @@
   imports = [
     ./hardware-configuration.nix
     ./modules
+    inputs.home-manager.nixosModules.home-manager
   ];
 
   networking.hostName = "jukebox";
 
   boot.kernelParams = [ "intel_idle.max_cstate=1" ];
   boot.loader.systemd-boot.consoleMode = "max";
+
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    extraSpecialArgs = { inherit inputs; };
+    users.jukebox = ../../home/jukebox.nix;
+  };
 
   environment.systemPackages = with pkgs; [
     appimage-run
