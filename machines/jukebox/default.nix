@@ -104,7 +104,7 @@
         "tty"
       ]
       ++ lib.optionals config.networking.networkmanager.enable [ "networkmanager" ];
-      hashedPassword = "$y$j9T$MaXetZGv2P37gaHZcHlM30$XYGjeh42kWUD5UsosMo9KIm6pF8v7VGDAI6JTTVTFh.";
+      password = "";
       openssh.authorizedKeys.keys = vars.sshPubKeys;
     }
     // lib.optionalAttrs config.programs.zsh.enable { shell = pkgs.zsh; };
