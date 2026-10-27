@@ -7,13 +7,13 @@
 
 buildDotnetModule (finalAttrs: {
   pname = "mcgalaxy";
-  version = "1.9.5.3";
+  version = "1.9.5.4";
 
   src = fetchFromGitHub {
     owner = "ClassiCube";
     repo = "MCGalaxy";
     tag = finalAttrs.version;
-    hash = "sha256-dInKW6y8S0mzac2cAUg0RMrfaEThgNoyNTZU66TGIyA=";
+    hash = "sha256-4xdPGDfkUxkYFRPMmW0zpMgC7PjY052ND57RpU+6z50=";
   };
 
   projectFile = "CLI/MCGalaxyCLI_dotnet8.csproj";
