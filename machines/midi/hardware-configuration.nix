@@ -14,6 +14,8 @@
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
+  boot.kernelPackages = pkgs.linuxKernel.packages.linux_7_2;
+
   boot.kernelParams = [ "nomodeset" ];
   boot.initrd.availableKernelModules = [
     "xhci_pci"
